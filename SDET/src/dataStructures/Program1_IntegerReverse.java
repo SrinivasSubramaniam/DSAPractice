@@ -59,32 +59,33 @@ import java.util.List;
 
 public class Program1_IntegerReverse 
 {
-//	public static void main(String[] args) 
-//	{
-//		int a = 12000;
-//		
-//		int rem =0;
-//		int sum =0;
-//		int num = 12000;
-//		
-//		while(a>0)
-//		{
-//			rem = a%10;
-//			a = a/10;
-//			sum = (sum*10) + rem;
-//		}
-//		
-//		if(sum==num)
-//		{
-//			System.out.println("Palindrome");
-//		}
-//		else
-//		{
-//			System.out.println("Not Palindrome");
-//		}
-//		
-//		System.out.println(sum);
-//	}
+	public static void main(String[] args) 
+	{
+		int a = 00123;
+		System.out.println("a is "+ a);
+		
+		int rem =0;
+		int sum =0;
+		int num = a;
+	
+	while(a>0)
+		{
+			rem = a%10;
+		a = a/10;
+		sum = (sum*10) + rem;
+		}
+	
+	if(sum==num)
+		{
+		System.out.println("Palindrome");
+		}
+		else
+		{
+		System.out.println("Not Palindrome");
+	}
+	
+		System.out.println(sum);
+	}
 	
 	
 //	public static void main(String[] args) 
@@ -108,7 +109,7 @@ public class Program1_IntegerReverse
 //		System.out.println(reverse.toString());
 //	}
 	
-	public static void main(String[] args) 
+/*	public static void main(String[] args) 
 	{
 		int a = 121;
 		String str = Integer.toString(a);
@@ -124,7 +125,7 @@ public class Program1_IntegerReverse
 		
 		System.out.println(str1.equals(str));
 		
-	}
+	}*/
 	
 	
 }
