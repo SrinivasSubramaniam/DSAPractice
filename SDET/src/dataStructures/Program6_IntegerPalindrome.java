@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import org.junit.Test;
 
 /*
  * Given an integer x, return true if x is palindrome integer.
@@ -57,11 +58,28 @@ import java.util.List;
  *    -> inbuilt approach --> using String, Collections --> Use Time complexity and space complexity
  */
 
-public class Program1_IntegerReverse {
-	public static void main(String[] args) {
-		int a = 1241;
+
+
+public class Program6_IntegerPalindrome {
+	
+	@Test
+	public void testData1()
+	{
+		int a=121;
+		if (integerPalindrome(a))
+		{
+			System.out.println("Yes it is a Palindrome");
+		}
+		else
+		{
+			System.out.println("No it is not a palindrome");
+		}
+	}
+	private boolean integerPalindrome(int a) {
+		a = 121;
 		int rem = a;
 		int sum = 0;
+		boolean flag=false;
 		//int num = a;
 
 		while (rem > 0) {
@@ -71,48 +89,14 @@ public class Program1_IntegerReverse {
 		}
 
 		if (sum == a) {
-			System.out.println("Palindrome");
+			return true;
 		} else {
-			System.out.println("Not Palindrome");
+			return false;
 		}
 
-		System.out.println(sum);
+		//System.out.println(sum);
 	}
 
-	// public static void main(String[] args)
-	// {
-	// int a = 121;
-	//
-	// String str = Integer.toString(a);
-	//
-	// StringBuilder sb = new StringBuilder(str);
-	// StringBuilder reverse = sb.reverse();
-	//
-	// if(str.equals(reverse.toString()))
-	// {
-	// System.out.println("Palindrome");
-	// }
-	// else
-	// {
-	// System.out.println("Not Palindrome");
-	// }
-	//
-	// System.out.println(reverse.toString());
-	// }
-
-	/*
-	 * public static void main(String[] args) { int a = 121; String str =
-	 * Integer.toString(a);
-	 * 
-	 * String str1 = "";
-	 * 
-	 * for (int i = str.length()-1; i >= 0; i--) { str1 = str1+ str.charAt(i); }
-	 * 
-	 * System.out.println("Str1 : "+str1+" Str : "+str );
-	 * 
-	 * System.out.println(str1.equals(str));
-	 * 
-	 * }
-	 */
+	
 
 }
