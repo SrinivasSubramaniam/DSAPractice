@@ -117,8 +117,7 @@ public class Program5_PeakElement {
 				}
 				
 			}
-			return max;
-			
+			return max;			
 	}
 		
 		//O(n+m)
