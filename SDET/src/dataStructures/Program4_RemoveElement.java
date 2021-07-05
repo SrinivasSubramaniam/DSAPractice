@@ -94,18 +94,20 @@ public class Program4_RemoveElement {
 			int pos=0;
 		for (int i = 0; i < oldArray.length; i++) {
 			if (oldArray[i]!=target)
-			{				
-				oldArray[pos++]=oldArray[i];	
+			{	
+				//int temp=oldArray[pos];
+				oldArray[pos++]=oldArray[i];
+				//oldArray[i]=temp;
 			}
 			
 		}
-		if (pos==oldArray.length ) return new int[] {-1,-1};
+		if (pos==oldArray.length || pos==0 ) return new int[] {-1,-1};
 		int[] newArray=new int[pos];
-		for (int i = 0; i < newArray.length; i++) {
+		for (int i = 0; i < pos; i++) {
 			newArray[i]=oldArray[i];
 		}
 		
-		return newArray;
+		return oldArray;
 	}
 }
 

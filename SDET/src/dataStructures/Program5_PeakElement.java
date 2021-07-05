@@ -75,7 +75,7 @@ public class Program5_PeakElement {
 		@Test
 		public void testData1()
 		{
-			int[] array={1,3,6,9,7,8};
+			int[] array={1,2,3,2,3,5};
 			System.out.println(maxElement(array));
 			
 			
