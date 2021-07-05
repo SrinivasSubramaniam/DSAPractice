@@ -101,13 +101,16 @@ public class Program4_RemoveElement {
 			}
 			
 		}
+		
 		if (pos==oldArray.length || pos==0 ) return new int[] {-1,-1};
-		int[] newArray=new int[pos];
+		return Arrays.copyOfRange(oldArray,0,pos);
+		
+		/*int[] newArray=new int[pos];
 		for (int i = 0; i < pos; i++) {
 			newArray[i]=oldArray[i];
-		}
+		}*/
 		
-		return oldArray;
+		//return oldArray;
 	}
 }
 

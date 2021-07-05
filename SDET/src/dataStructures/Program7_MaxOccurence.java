@@ -60,43 +60,35 @@ import org.junit.Test;
 
 
 
-public class Program6_IntegerPalindrome {
+public class Program7_MaxOccurence {
 	
 	@Test
 	public void testData1()
 	{
-		int a=121;
-		if (integerPalindrome(a))
-		{
-			System.out.println("Yes it is a Palindrome");
-		}
-		else
-		{
-			System.out.println("No it is not a palindrome");
-		}
+		int[] array={6,6,2,2,2};
+		System.out.println(integerPalindrome(array));
+		
 	}
-	private boolean integerPalindrome(int a) {
-		a = 121;
-		int rem = a;
-		int sum = 0;
 	
-		//int num = a;
-
-		while (rem > 0) {
-			//rem = a % 10;
-			sum = (sum * 10) + (rem%10);
-			rem = rem / 10;
+	/*Given an array nums of size n, return the majority element. ou may assume that the majority element always exists in the array.
+	The majority element is the element that appears more than n / 2 times. */
+	private int integerPalindrome(int[] array) {
+		for (int i = 0; i <= array.length/2; i++) {
+			int count=1;
+			for (int j = i+1; j < array.length; j++) {
+				if (array[i]==array[j])
+				{
+					count++;
+				}
+			}
+			if (count>array.length/2)
+			{
+				return array[i];
+			}
 		}
-
-		if (sum == a) {
-			return true;
-		} else {
-			return false;
+		return -1;
+			
 		}
-
-		//System.out.println(sum);
-	}
-
 	
 
 }
