@@ -120,6 +120,29 @@ public class Program5_PeakElement {
 			return max;			
 	}
 		
+		/*private int peakElement(int[] array)
+		{
+			if (array.length==0) {
+				throw new IllegalArgumentException("Zero length arrays");
+				
+			}
+			if (array.length==1)
+			{
+				return array[0];
+			}
+			if (array[0]>array[1])
+			{
+				return array[0];
+			}
+			
+			if (array[array.length-1]>array[array.length-2])
+			{
+				return array[array.length-2];
+			}
+			
+		
+		}*/
+		
 		//O(n+m)
 }
 

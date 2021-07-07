@@ -6,57 +6,48 @@ import java.util.Collections;
 import java.util.List;
 import org.junit.Test;
 
+import junit.framework.Assert;
+
 /*
  * Given an integer x, return true if x is palindrome integer.
 
-	An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
-	
- * Problem Solving Techniques :
- * 1. Do you understand the question?
- * 		Yes - Go to next step
- * 		No - Ask the person to provide more detail with example(s).
- * 
- *  ->what is the input(s)? --> based on the question, we decide to create an input
- *  	 [i.e., Palindrome program needs input as integer]
- * 	->what is the expected output? --> [boolean true or false]
- *  ->Do i have constraints to solve the problem? --> [Eg: Its based on the question or interviewer expectations such as 
- *  specific algorithms -> "O Notations" - > 1) Time Complexity 2) Space Complexity ]
- *  ->Do i have all informations to go to next step? -> If all the above mentioned steps (i.e., for Yes) we can proceed
- *  ->How big is your test data will be? -> Eg., If input is 5 digits (10001), so the Time complexity will be O(n) 
- *  
- *  2. Test Data Set
- *  -> Minimum of 3 data set !! "Positive" , "Edge" and "Negative" 
- *  ----> Positive - 1221 -> 1221
- *  ----> Negative - 1234 -> 4321
- *  ----> Edge - 120000 -> 21 
- *  -> Validate with the interviewer if the data set is fine -> its depends on the interviewer
- *  
- *  3. Do i know how to solve it?
- *  
- *  Yes - Great, is there an alternate? -> Yes
- *  No - Can i break down the problem into sub problems? -> Let's Assume, 
- *  	 If interviewer ask to solve without using string, 
- *  	 to know the integer length, in this we can't have any straight forward way
- *  then -> 1. to use while loop (if its unknown length of the integer -> iterations are unknown)
- *  		2. create a variable for and initialize as same value as input (121).
- *  		3. Create a variable for to store the reminder and initialize as 'zero'.
- *  		4. use modulus to get the reminder values (E.g., Itr 1: 121%10 = 1 Itr 2 : 12% Itr 3: 1%10 = 1)
- *  		5. assign this reminder values to the created variable (step 3)
- *  		6. compare the created variable (step 2) and input 
- *  		7. print out the output
- * 
- * 4. Ask for hint (if you do not know how to solve it?) 
- *  		-> Ask one time and thank the interviewer
- *  		-> Worst Case! even after got the hint, we don't know how to solve, then convince them and prove with your confidence 
- *  		   level to get the next question 
- *  
- * 5. Do I know alternate solutions as well?
- * 	
- * 	Yes - What are those?
- *     way of Approach to solve with the following
- *    -> Brute Force (Standard) --> recursive function, using for loop --> without considering this Time complexity and space complexity 
- *    -> inbuilt approach --> using String, Collections --> Use Time complexity and space complexity
- */
+         * 1) Did I understand the problem? Yes or No !! - Yes 
+         * -> If No, Ask the person to provide more detail with example(s) 
+         * -> If yes, go to next step !!
+         * 
+         * What is the input(s)? - Integer
+         * What is the expected output? - boolean
+         * Do I have constraints to solve the problem? - No
+         * Do I have all informations to go to next step!!
+         * How big is your test data set will be?
+         *
+         *
+         *2) Test Data Set
+         *  Minimum of 3 data set !! Positive, Edge and Negative
+         *  Validate the data set with the interviewer 
+         *
+         *3) Do I know how to solver it?
+         *    Yes - great, Is there any alternate solution?
+         *    No - Can I break down the problem to sub problems?
+         *
+         *4) Ask for the hint (If you don't know how to solve it)
+         *
+         *
+         *5) Do I know alternate solution to solve this problem?
+         *6) If you know alternate solutions-> find out the O notations (performance)
+         *  Then explain the both or the best (depends on the time)
+         *  
+         *  Approach 1-> Start with the worst -> Improve to optimize -> End up with the beset
+         *  Approach 2-> Write down the options and benefits and code the best
+         *  
+         *7) Start with the Pseudo code
+         * 
+         *8) Implement them in the code (editor)
+         * 
+         *9) Test against the different data set
+         * 
+         *10) If it fails, debug them to solve it        
+*/
 
 
 
@@ -66,35 +57,52 @@ public class Program6_IntegerPalindrome {
 	public void testData1()
 	{
 		int a=121;
-		if (integerPalindrome(a))
-		{
-			System.out.println("Yes it is a Palindrome");
-		}
-		else
-		{
-			System.out.println("No it is not a palindrome");
-		}
+		System.out.println(integerPalindrome(a));
+		Assert.assertTrue(integerPalindrome(a));
 	}
+	
+	@Test
+	public void testData2()
+	{
+		int a=14445;
+		System.out.println(integerPalindrome(a));
+		Assert.assertEquals(false, integerPalindrome(a));
+	}
+	
+	@Test
+	public void testData3()
+	{
+		int a=0;
+		System.out.println(integerPalindrome(a));
+		Assert.assertEquals(false, integerPalindrome(a));
+	}
+	
+	/*Psuedocode
+	 * 1.create a reminder variable and assign integer value
+	 * 2.create a another variable and assign 0 to it
+	 * 3.Check if it is a single digit number and return false
+	 * 4.In While loop check if integer value is greater than 0
+	 * 5.Use Modulo operator to find the reminder add with sum of previous sum*10
+	 * 6.Use division operator to find the next integer
+	 * */
+	
+	/*Time Complexity - O(n)
+	 *Space Complexity - O(1)*/
 	private boolean integerPalindrome(int a) {
-		a = 121;
+		
 		int rem = a;
 		int sum = 0;
-	
-		//int num = a;
+		
+		if (a>=0&&a<10) return false;
 
 		while (rem > 0) {
-			//rem = a % 10;
 			sum = (sum * 10) + (rem%10);
 			rem = rem / 10;
 		}
 
-		if (sum == a) {
-			return true;
-		} else {
-			return false;
-		}
+		if (sum == a) return true;
+		else return false;
 
-		//System.out.println(sum);
 	}
 
 	

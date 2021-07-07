@@ -3,13 +3,18 @@ package dataStructures;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 /*
- *  Given an array nums of size n, return the majority element. you may assume that the majority element always exists in the array.The majority element is the element that appears more than n/2 times. 
+ * Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+
+Input: nums = [3,0,1]
+Output: 2
 
          * 1) Did I understand the problem? Yes or No !! - Yes 
          * -> If No, Ask the person to provide more detail with example(s) 
@@ -17,7 +22,7 @@ import org.junit.Test;
          * 
          * What is the input(s)? - integer Array
          * What is the expected output? - integer
-         * Do I have constraints to solve the problem? - majority element is the element that appears more than n/2 times. 
+         * Do I have constraints to solve the problem? -  
          * Do I have all informations to go to next step!!
          * How big is your test data set will be?
          *
@@ -49,64 +54,67 @@ import org.junit.Test;
          *10) If it fails, debug them to solve it        
 */
 
+public class Program9_MissingNumber {
 
-/*Psuedo Code
- * 1.Do a for loop with lenght/2 
- * 2.Create a count variable to get the max Occurence
- * 3.Create nested for loop and check whether i+1 element is matching the previous value
- * 4.If matching increment it
- * 5.Check if the count is more than length/2*/
+	@Test
+	public void testData1() {
+		int[] num1 = { 1, 2, 2, 1 };
+		int[] num2 = { 2, 2 };
+		System.out.println(Arrays.toString(maxOccurenceUsingSet(num1, num2)));
 
-/*Time Complexity O(n/2)
- *Space Complexity O(n/2)*/
+	}
 
+	@Test
+	public void testData2() {
+		int[] num1 = { 1, 2 };
+		int[] num2 = { 3, 4 };
+		System.out.println(Arrays.toString(maxOccurenceUsingSet(num1, num2)));
 
-public class Program7_MaxOccurence {
+	}
+
+	@Test
+	public void testData3() {
+		int[] num1 = { 2, 2, 2, 2 };
+		int[] num2 = { 2, 2, 2, 2 };
+		System.out.println(Arrays.toString(maxOccurenceUsingSet(num1, num2)));
+
+	}
+
 	
-	@Test
-	public void testData1()
-	{
-		int[] array={6,6,2,2,2};
-		System.out.println(integerPalindrome(array));
-		Assert.assertEquals(2, integerPalindrome(array));
-		
-	}
-	@Test
-	public void testData2()
-	{
-		int[] array={2,2,4,4};
-		System.out.println(integerPalindrome(array));
-		Assert.assertEquals(-1, integerPalindrome(array));
-		
-	}
-	@Test
-	public void testData3()
-	{
-		int[] array={2,2,2,2};
-		System.out.println(integerPalindrome(array));
-		Assert.assertEquals(2, integerPalindrome(array));
-		
-	}
-	
-	/*Given an array numss of size n, return the majority element. ou may assume that the majority element always exists in the array.
-	The majority element is the element that appears more than n / 2 times. */
-	private int integerPalindrome(int[] array) {
-		for (int i = 0; i <= array.length/2; i++) {
-			int count=1;
-			for (int j = i+1; j < array.length; j++) {
-				if (array[i]==array[j])
-				{
-					count++;
+
+	/*
+	 * Time Complexity O(n) 
+	 * Space Complexity O(1)
+	 */
+
+	private int[] maxOccurenceUsingSet(int[] num1, int[] num2) {
+		if (num1.length > 0 && num2.length > 0) {
+			Set<Integer> set1 = new HashSet<Integer>();
+			for (int value : num1) {
+				set1.add(value);
+			}
+			Set<Integer> set2 = new HashSet<Integer>();
+			for (int value : num2) {
+				set2.add(value);
+			}
+			set1.retainAll(set2);
+			if (set1.size() > 0) {
+				int[] num3 = new int[set1.size()];
+				int k = 0;
+				Iterator<Integer> itr = set1.iterator();
+				while (itr.hasNext()) {
+					num3[k++] = itr.next();
 				}
-			}
-			if (count>array.length/2)
-			{
-				return array[i];
+				return num3;
+			} else {
+				return new int[] {};
 			}
 		}
-		return -1;
-			
-		}
+		return new int[] {};
+	}
+	
+	
 	
 
+	
 }

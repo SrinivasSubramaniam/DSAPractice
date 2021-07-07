@@ -92,6 +92,8 @@ public class Program4_RemoveElement {
 		private int[] removeElement(int[] oldArray,int target)
 		{
 			int pos=0;
+			//3 4 2 4
+			// pos=0
 		for (int i = 0; i < oldArray.length; i++) {
 			if (oldArray[i]!=target)
 			{	
@@ -102,7 +104,8 @@ public class Program4_RemoveElement {
 			
 		}
 		
-		if (pos==oldArray.length || pos==0 ) return new int[] {-1,-1};
+		if (pos==oldArray.length  ) return oldArray;
+		if (pos==0) return new int[] {-1,-1};
 		return Arrays.copyOfRange(oldArray,0,pos);
 		
 		/*int[] newArray=new int[pos];
