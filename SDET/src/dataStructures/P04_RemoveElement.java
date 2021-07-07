@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-public class Program5_PeakElement {
+public class P04_RemoveElement {
 	
 	/*
 	 * Given an array of integers nums find the first duplicate number
@@ -14,17 +14,17 @@ public class Program5_PeakElement {
 	 * 		Yes - Go to next step
 	 * 		No - Ask the person to provide more detail with example(s).
 	 * 
-	 *  ->what is the input(s)? --> Int array
-	 * 	->what is the expected output? --> integer
-	 *  ->Do i have constraints to solve the problem? --> not supposed to sort
+	 *  ->what is the input(s)? --> Integer Array, integer target
+	 * 	->what is the expected output? --> Integer array
+	 *  ->Do i have constraints to solve the problem? -->
 	 *  ->Do i have all informations to go to next step? -> If all the above mentioned steps (i.e., for Yes) we can proceed
 	 *  ->How big is your test data will be? -> 
 	 *  
 	 *  2. Test Data Set
 	 *  -> Minimum of 3 data set !! "Positive" , "Edge" and "Negative" 
-	 *  ----> Positive - {1,2,5,6,5,7,1}
-	 *  ----> Negative - {} -1
-	 *  ----> Edge - {5,5,5,5} 5
+	 *  ----> Positive - {1,3,3,5,6,3} 3
+	 *  ----> Negative - {1,5,6,7} 3
+	 *  ----> Edge - {3,3,3,3} 3
 	 *  -> Validate with the interviewer if the data set is fine -> its depends on the interviewer
 	 *  
 	 *  3. Do i know how to solve it?
@@ -60,90 +60,61 @@ public class Program5_PeakElement {
 	 * 
 	 * 10. If it fails, debug them to solve it
 	 */
-	
-	
-	
-	/* Psuedo code
-	 * 1. Input - integer array
-	 * 2. Output - Integer
-	 * 3. intialize a variable to store max value and store 
-	 * 4. Traverse through the array 
-	 * 5. Compare the value and assign max value 
-	 * 
-	*/
 
 		@Test
 		public void testData1()
 		{
-			int[] array={1,2,3,2,3,5};
-			System.out.println(maxElement(array));
-			
+			int[] oldArray={1,3,3,5,6,3};
+			int target=3;
+			System.out.println(Arrays.toString(removeElement(oldArray,target)));
 			
 		}
 		
-		@Test (expected=IllegalArgumentException.class)
+		@Test
 		public void testData2()
 		{
-			int[] array={};
-			System.out.println(maxElement(array));
-			
-			
+			int[] oldArray={1,5,6,7};
+			int target=3;
+			System.out.println(Arrays.toString(removeElement(oldArray,target)));
 			
 		}
 		
 		@Test
 		public void testData3()
 		{
-			int[] array={3,3,3,3};
-			System.out.println(maxElement(array));
+			int[] oldArray={3,3,3,3};
+			int target=3;
+			System.out.println(Arrays.toString(removeElement(oldArray,target)));
 			
 		}
 		
 		
-		private int maxElement(int[] array)
+		private int[] removeElement(int[] oldArray,int target)
 		{
-			
-				if (array.length==0) {
-					throw new IllegalArgumentException("Zero length arrays");
-					
-				}
-				int max=array[0];
-			
-			for (int i = 1; i < array.length; i++) {
-				
-				if (array[i]>max)
-				{
-				max=array[i];	
-				}
-				
+			int pos=0;
+			//3 4 2 4
+			// pos=0
+		for (int i = 0; i < oldArray.length; i++) {
+			if (oldArray[i]!=target)
+			{	
+				//int temp=oldArray[pos];
+				oldArray[pos++]=oldArray[i];
+				//oldArray[i]=temp;
 			}
-			return max;			
-	}
+			
+		}
 		
-		/*private int peakElement(int[] array)
-		{
-			if (array.length==0) {
-				throw new IllegalArgumentException("Zero length arrays");
-				
-			}
-			if (array.length==1)
-			{
-				return array[0];
-			}
-			if (array[0]>array[1])
-			{
-				return array[0];
-			}
-			
-			if (array[array.length-1]>array[array.length-2])
-			{
-				return array[array.length-2];
-			}
-			
+		if (pos==oldArray.length  ) return oldArray;
+		if (pos==0) return new int[] {-1,-1};
+		return Arrays.copyOfRange(oldArray,0,pos);
 		
+		/*int[] newArray=new int[pos];
+		for (int i = 0; i < pos; i++) {
+			newArray[i]=oldArray[i];
 		}*/
 		
-		//O(n+m)
+		//return oldArray;
+	}
 }
 
 

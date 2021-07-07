@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-public class Program2_TwoSumV1 {
+public class P02_TwoSumV1 {
 	
 	/*
 	 * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.

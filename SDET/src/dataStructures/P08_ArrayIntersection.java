@@ -8,13 +8,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /*
- * Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
-
-Input: nums = [3,0,1]
-Output: 2
+ *  Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+ 
+Example 1:
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2] 
 
          * 1) Did I understand the problem? Yes or No !! - Yes 
          * -> If No, Ask the person to provide more detail with example(s) 
@@ -22,7 +24,7 @@ Output: 2
          * 
          * What is the input(s)? - integer Array
          * What is the expected output? - integer
-         * Do I have constraints to solve the problem? -  
+         * Do I have constraints to solve the problem? - majority element is the element that appears more than n/2 times. 
          * Do I have all informations to go to next step!!
          * How big is your test data set will be?
          *
@@ -54,13 +56,16 @@ Output: 2
          *10) If it fails, debug them to solve it        
 */
 
-public class Program9_MissingNumber {
+public class P08_ArrayIntersection {
 
 	@Test
 	public void testData1() {
-		int[] num1 = { 1, 2, 2, 1 };
-		int[] num2 = { 2, 2 };
-		System.out.println(Arrays.toString(maxOccurenceUsingSet(num1, num2)));
+		int[] num1 = { 1, 2, 2,3,3,1 };
+		int[] num2 = { 2, 2,3,3 };
+		
+		int[] expected= {2,3};
+		System.out.println(Arrays.toString(intersectionUsingSet(num1, num2)));
+		Assert.assertArrayEquals(expected, intersectionUsingSet(num1, num2));
 
 	}
 
@@ -68,7 +73,9 @@ public class Program9_MissingNumber {
 	public void testData2() {
 		int[] num1 = { 1, 2 };
 		int[] num2 = { 3, 4 };
-		System.out.println(Arrays.toString(maxOccurenceUsingSet(num1, num2)));
+		int[] expected= {};
+		System.out.println(Arrays.toString(intersectionUsingSet(num1, num2)));
+		Assert.assertArrayEquals(expected, intersectionUsingSet(num1, num2));
 
 	}
 
@@ -76,10 +83,19 @@ public class Program9_MissingNumber {
 	public void testData3() {
 		int[] num1 = { 2, 2, 2, 2 };
 		int[] num2 = { 2, 2, 2, 2 };
-		System.out.println(Arrays.toString(maxOccurenceUsingSet(num1, num2)));
+		
+		int[] expected = {2};
+		System.out.println(Arrays.toString(intersectionUsingSet(num1, num2)));
+		Assert.assertArrayEquals(expected, intersectionUsingSet(num1, num2));
 
 	}
 
+	/*Psuedo Code
+	 * 1. Iterate array 1 and put it in a set
+	 * 2. Iterate array 2 and put it in a set2
+	 * 3. Use Retail all
+	 * 4. Create a new array with set size
+	 * 5. iterate set and put it in a array*/
 	
 
 	/*
@@ -87,7 +103,7 @@ public class Program9_MissingNumber {
 	 * Space Complexity O(1)
 	 */
 
-	private int[] maxOccurenceUsingSet(int[] num1, int[] num2) {
+	private int[] intersectionUsingSet(int[] num1, int[] num2) {
 		if (num1.length > 0 && num2.length > 0) {
 			Set<Integer> set1 = new HashSet<Integer>();
 			for (int value : num1) {
@@ -113,7 +129,32 @@ public class Program9_MissingNumber {
 		return new int[] {};
 	}
 	
-	
+	/*
+	 * Time Coomplexity O(n^2) 
+	 * Space Complexity O(1)
+	 */
+	private int[] intersection(int[] num1, int[] num2) {
+		if (num1.length>0 && num2.length>0) {
+			int previous = -1;
+			int pos = 0;
+			Arrays.sort(num1);
+			Arrays.sort(num2);
+			for (int i = 0; i < num1.length; i++) {
+				for (int j = 0; j < num2.length; j++) {
+					if (num1[i] == num2[j] && num1[i] != previous) {
+						num1[pos++] = num1[i];
+						previous = num1[i];
+						break;
+					}
+				}
+
+			}
+			System.out.println(pos);
+			return Arrays.copyOfRange(num1, 0, pos);
+			// return num1;
+		}
+		return new int[] {};
+	}
 	
 
 	

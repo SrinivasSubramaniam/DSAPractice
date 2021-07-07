@@ -51,7 +51,7 @@ import junit.framework.Assert;
 
 
 
-public class Program6_IntegerPalindrome {
+public class P06_IntegerPalindrome {
 	
 	@Test
 	public void testData1()

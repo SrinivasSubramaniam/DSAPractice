@@ -10,6 +10,7 @@ public class P17_DuplicatesFind {
 		
 		int [] n ={1,1,3,5,5,7,9};
 		Set<Integer> set = new LinkedHashSet<Integer>();
+		
 		for (int i : n) {
 			if (set.contains(i))
 			{

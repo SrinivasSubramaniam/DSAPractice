@@ -3,7 +3,7 @@ package dataStructures;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Program3_FirstDuplicate {
+public class P03_FirstDuplicate {
 	
 	/*
 	 * Given an array of integers nums find the first duplicate number

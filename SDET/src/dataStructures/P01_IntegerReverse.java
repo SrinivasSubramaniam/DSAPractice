@@ -57,7 +57,7 @@ import java.util.List;
  *    -> inbuilt approach --> using String, Collections --> Use Time complexity and space complexity
  */
 
-public class Program1_IntegerReverse {
+public class P01_IntegerReverse {
 	public static void main(String[] args) {
 		int a = 1241;
 		int rem = a;
