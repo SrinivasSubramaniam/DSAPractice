@@ -12,11 +12,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /*
- *  Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
- 
-Example 1:
-Input: nums1 = [1,2,2,1], nums2 = [2,2]
-Output: [2] 
+		 *  Given two integer arrays nums1 and nums2, return an array of their intersection. 
+		 *  Each element in the result must be unique and you may return the result in any order.
+		 
+		Example 1:
+		Input: nums1 = [1,2,2,1], nums2 = [2,2]
+		Output: [2] 
 
          * 1) Did I understand the problem? Yes or No !! - Yes 
          * -> If No, Ask the person to provide more detail with example(s) 
@@ -60,12 +61,15 @@ public class P08_ArrayIntersection {
 
 	@Test
 	public void testData1() {
-		int[] num1 = { 1, 2, 2,3,3,1 };
-		int[] num2 = { 2, 2,3,3 };
+		/*int[] num1 = { 1, 2, 2,3,3,1 };
+		int[] num2 = { 2, 2,3,3 };*/
 		
-		int[] expected= {2,3};
-		System.out.println(Arrays.toString(intersectionUsingSet(num1, num2)));
-		Assert.assertArrayEquals(expected, intersectionUsingSet(num1, num2));
+		int[] num1 = { 1,2,2,1};
+		int[] num2 = { 1,2};
+		
+		int[] expected= {1,2};
+		System.out.println(Arrays.toString(intersection(num1, num2)));
+		Assert.assertArrayEquals(expected, intersection(num1, num2));
 
 	}
 
@@ -74,8 +78,8 @@ public class P08_ArrayIntersection {
 		int[] num1 = { 1, 2 };
 		int[] num2 = { 3, 4 };
 		int[] expected= {};
-		System.out.println(Arrays.toString(intersectionUsingSet(num1, num2)));
-		Assert.assertArrayEquals(expected, intersectionUsingSet(num1, num2));
+		System.out.println(Arrays.toString(intersection(num1, num2)));
+		Assert.assertArrayEquals(expected, intersection(num1, num2));
 
 	}
 
@@ -85,8 +89,8 @@ public class P08_ArrayIntersection {
 		int[] num2 = { 2, 2, 2, 2 };
 		
 		int[] expected = {2};
-		System.out.println(Arrays.toString(intersectionUsingSet(num1, num2)));
-		Assert.assertArrayEquals(expected, intersectionUsingSet(num1, num2));
+		System.out.println(Arrays.toString(intersection(num1, num2)));
+		Assert.assertArrayEquals(expected, intersection(num1, num2));
 
 	}
 
@@ -130,7 +134,12 @@ public class P08_ArrayIntersection {
 	}
 	
 	/*
-	 * Time Coomplexity O(n^2) 
+	 * Psuedo code
+	 * Sort both the input array
+	 * initialize a position variable 
+	 * Traverse through a outer for loop and a inner for loop
+	 * Check if i and j values are same then assign that value to input array in position index
+	 * Time Complexity O(n^2) 
 	 * Space Complexity O(1)
 	 */
 	private int[] intersection(int[] num1, int[] num2) {
@@ -147,7 +156,6 @@ public class P08_ArrayIntersection {
 						break;
 					}
 				}
-
 			}
 			System.out.println(pos);
 			return Arrays.copyOfRange(num1, 0, pos);
@@ -156,6 +164,24 @@ public class P08_ArrayIntersection {
 		return new int[] {};
 	}
 	
+	
+	/*private int[] intersectionUsingTwoPointer(int[] nums1, int[] nums2) {
+		Arrays.sort(nums1);
+		Arrays.sort(nums2);
+		int i=0,j=0,k=0;
+        while(i<nums1.length && j<nums2.length){
+            if(nums1[i]<nums2[j]) i++;
+            else if(nums1[i]>nums2[j]) j++;
+            else{
+                nums1[k++]=nums1[i];
+                i++;
+                j++;
+            }
+        }
+		return  Arrays.copyOfRange(nums1, 0, k);
+		
+	}
+	*/
 
 	
 }

@@ -1,4 +1,4 @@
-package dataStructures;
+package personalPracticeProblems;
 
 public class MaxOccu {
 public static void main(String[] args) {

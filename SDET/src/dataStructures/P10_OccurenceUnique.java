@@ -10,25 +10,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.testng.asserts.Assertion;
-
-import junit.framework.Assert;
 
 /*
- * Given an array nums containing n distinct numbers in the range [0, n], 
- * return the only number in the range that is missing from the array.
-
-Input: nums = [3,0,1]
-Output: 2
+ * Given an array of integers arr, write a function that
+ *  returns true if and only if the number of occurrences of each value in the array is unique.
+ 
+Example 1:
+Input: arr = [1,2,2,1,1,3]
+Output: true
 
          * 1) Did I understand the problem? Yes or No !! - Yes 
          * -> If No, Ask the person to provide more detail with example(s) 
          * -> If yes, go to next step !!
          * 
          * What is the input(s)? - integer Array
-         * What is the expected output? - integer
-         * Do I have constraints to solve the problem? -  Input array is distinct numbers and can be only between (0,n)
+         * What is the expected output? - boolean
+         * Do I have constraints to solve the problem? -  Array can be in any unsorted array
          * Do I have all informations to go to next step!!
          * How big is your test data set will be?
          *
@@ -38,7 +37,7 @@ Output: 2
          *  Validate the data set with the interviewer 
          *
          *3) Do I know how to solver it?
-         *    Yes - great, Is there any alternate solution?
+         *    Yes - great, Is there any alternate solution?- Using Map and Set
          *    No - Can I break down the problem to sub problems?
          *
          *4) Ask for the hint (If you don't know how to solve it)
@@ -104,18 +103,25 @@ public class P10_OccurenceUnique {
 	private boolean occurenceUnique(int[] num1)
 	{
 		if (num1.length>0) {
+			
+			if (num1.length==1) return true;
 			Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-			for (int i : num1) {
+
+			for (int i=0;i<num1.length;i++) {
+					map.put(num1[i], map.getOrDefault(num1[i],0)+1);
+			}
+			return map.size() == new HashSet<Integer>(map.values()).size();
+	} 
+		return false;
+		
+		/*Before Optimizing
+		 * for (int i : num1) {
 				if (map.containsKey(i)) {
 					map.put(i, map.get(i) + 1);
 				} else {
 					map.put(i, 1);
 				}
 			}
-			return map.size() == new HashSet<Integer>(map.values()).size();
-		} return false;
-		
-		/*Before Optimizing
 		 * Set<Integer> unique=new HashSet<Integer>(map.values());
 
 		if (unique.size()==map.size())
@@ -124,7 +130,8 @@ public class P10_OccurenceUnique {
 		}
 		return false;*/
 	}
-
+	
+	
 
 	/*private int occurenceUnique(int[] num1) {
 		Arrays.sort(num1);
@@ -143,7 +150,11 @@ public class P10_OccurenceUnique {
 			}	
 		}
 		*/
+	
+	
 }		
+
+	
 		
 
 	

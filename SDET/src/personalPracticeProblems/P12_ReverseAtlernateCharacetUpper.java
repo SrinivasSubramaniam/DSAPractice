@@ -5,6 +5,7 @@ public class P12_ReverseAtlernateCharacetUpper {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String word="Welcome to Automation";
+		
 		String[] s = word.split(" ");
 		for (int i = s.length-1; i >=0; i--) {
 					String split = s[i];

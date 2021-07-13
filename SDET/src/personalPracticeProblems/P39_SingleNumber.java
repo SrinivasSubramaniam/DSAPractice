@@ -16,10 +16,11 @@ public class P39_SingleNumber {
 				System.out.println(list1);
 			}else
 			{
-				Integer value = new Integer(i);
+				//Integer value = new Integer(i);
 				System.out.println("i is "+ i);
-				System.out.println("Value is "+value);
-				list1.remove(value);
+				System.out.println("Value is "+Integer.valueOf(i));
+				list1.remove(i);
+				list1.remove(Integer.valueOf(i));
 			}
 			
 		}

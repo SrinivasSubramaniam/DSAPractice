@@ -1,46 +1,52 @@
 package personalPracticeProblems;
 
 import java.io.*;
+import java.util.Arrays;
 
-public class P71ArrayUncommonV5 {
+public class P71ArrayUncommonV7 {
      
     static void printUncommon(int arr1[],
                      int arr2[], int n1, int n2)
     {
-    	int[] k=new int[n1];
-        int i = 0, j = 0;
+    	Arrays.sort(arr1);
+    	Arrays.sort(arr2);
+        int i = 0, j = 0,pos=0;
+        //int[] arr3=new int[arr1.length];
+        //int[] arr3=new int[arr1.length];
         while (i < n1 && j < n2) {
  
             // If not common, print smaller
             if (arr1[i] == arr2[j]) {
-                System.out.print(arr1[i] + " ");
+                arr1[pos++]=arr1[i];
                 i++;
+                j++;
             }
-          
  
             // Skip common element
             else {
                 i++;
-                j++;
+                //j++;
             }
         }
  
         // printing remaining elements
         while (i < n1) {
-            System.out.print(arr1[i] + " ");
+            
             i++;
         }
         while (j < n2) {
-            System.out.print(arr2[j] + " ");
+           
             j++;
         }
+        System.out.println(pos);
+        System.out.println(Arrays.toString(arr1));
     }
  
     // Driver code
     public static void main(String[] args)
     {
-		int[] arr1={1,2,2,3,3};
-		int[] arr2={2,2,3,3};
+		int[] arr1={8};
+		int[] arr2={1,2,3,4,5};
  
         int n1 = arr1.length;
         int n2 = arr2.length;
