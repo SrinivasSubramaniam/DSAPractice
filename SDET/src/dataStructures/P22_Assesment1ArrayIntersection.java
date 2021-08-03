@@ -58,7 +58,20 @@ public class P22_Assesment1ArrayIntersection {
      *Space complexity - O(n)
      *
      /*/
-
+	@Test
+	public  void testData1() {
+		int[] num={1,2,3};
+		int[] num1={2,1} ;
+		System.out.println(Arrays.toString(intersect(num,num1)));
+		
+	}
+	
+	@Test
+	public  void testData2() {
+		int[] num={1,2,3,3,3};
+		int[] num1={2,3,4} ;
+		System.out.println(Arrays.toString(intersect(num,num1)));
+	}
     public int[] intersect(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
 		Arrays.sort(nums2);

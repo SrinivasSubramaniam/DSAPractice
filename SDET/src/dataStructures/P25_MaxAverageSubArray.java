@@ -27,6 +27,7 @@ public class P25_MaxAverageSubArray {
     		sum=Math.max(sum, tempSum);			
 		}
     	System.out.println(sum/4);
+    	
     	return sum/4;
 
 	

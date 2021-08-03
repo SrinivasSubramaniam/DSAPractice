@@ -18,8 +18,8 @@ public class P26_IsomorphicStrings {
 
     @Test
     public void test2() {
-        String str1 = "egg";
-        String str2 = "add";
+        String str1 = "add";
+        String str2 = "egg";
         System.out.println(isIsomorphicStrings(str1, str2));
         Assert.assertTrue(isIsomorphicStrings(str1, str2));
     }
@@ -43,6 +43,7 @@ public class P26_IsomorphicStrings {
 
         for(Map.Entry<Character, Set<Character>> entry : map.entrySet()) {
             if(!set.add(entry.getValue().iterator().next())) return false;
+           
         }
 
 

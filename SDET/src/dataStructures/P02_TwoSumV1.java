@@ -1,7 +1,9 @@
 package dataStructures;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
@@ -76,7 +78,9 @@ public class P02_TwoSumV1 {
 	}
 	
 	private int[] twoSum(int[] array, int target)
+	
 	{
+		
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		   
 	    for (int i = 0; i < array.length; i++) {

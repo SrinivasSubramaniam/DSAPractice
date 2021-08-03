@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class P70_GameofPalindrome {
@@ -31,6 +32,7 @@ public class P70_GameofPalindrome {
 		{
 			System.out.println(itr.next());
 		}
+		
 		for (Integer value : map.values()) {
 			if (value%2==1)
 			{

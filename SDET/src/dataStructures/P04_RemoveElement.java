@@ -7,7 +7,7 @@ import org.junit.Test;
 public class P04_RemoveElement {
 	
 	/*
-	 * Given an array of integers nums find the first duplicate number
+	 * 
 	 * 
 	 * Problem Solving Techniques :
 	 * 1. Do you understand the question?
@@ -90,7 +90,7 @@ public class P04_RemoveElement {
 		
 		
 		private int[] removeElement(int[] oldArray,int target)
-		{
+		{		
 			int pos=0;
 			//3 4 2 4
 			// pos=0

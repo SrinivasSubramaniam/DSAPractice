@@ -5,6 +5,8 @@ public class P68_MakingAnagramCount {
 	public static void main(String[] args) {
 		// Count the characters to be deleted to make String a anagram
 		String s="aaabbb";
+		int ascii=s.charAt(0);
+		System.out.println(ascii);
 		if (s.length()%2!=0)
 		{
 			System.out.println("Can't make it to Anagram");

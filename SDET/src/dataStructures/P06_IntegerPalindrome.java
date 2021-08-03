@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.junit.Test;
+import org.junit.*;
 
-import junit.framework.Assert;
+//import junit.framework.Assert;
 
 /*
  * Given an integer x, return true if x is palindrome integer.
