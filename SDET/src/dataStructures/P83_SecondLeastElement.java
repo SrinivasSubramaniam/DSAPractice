@@ -56,31 +56,38 @@ public class P83_SecondLeastElement {
 	 *
 	 * /
 	 */
-	/*@Test
+	@Test
     public void test1(){
         String s ="amazon";
         Assert.assertEquals(findX(s),'a');
         
-    }*/
+    }
 	@Test
     public void test2(){
         String s ="ddddzzzabb";
-        System.out.println(findXUsingASCII(s));
-        //Assert.assertEquals(findX(s),'o');
+        //System.out.println(findX(s));
+        Assert.assertEquals(findX(s),'b');
         
     }
 	@Test
     public void test3(){
         String s ="abbcccddd";
-        System.out.println(findXUsingASCII(s));
-        //Assert.assertEquals(findX(s),'o');
+        //System.out.println(findX(s));
+        Assert.assertEquals(findX(s),'b');
         
     }
 	@Test
     public void test4(){
         String s ="abcccddd";
-        System.out.println(findXUsingASCII(s));
-        //Assert.assertEquals(findX(s),'o');
+        //System.out.println(findX(s));
+        Assert.assertEquals(findX(s),'c');
+        
+    }
+	@Test
+    public void test5(){
+        String s ="dddzzzbbcc";
+        //System.out.println(findX(s));
+        Assert.assertEquals(findX(s),'d');
         
     }
 	
@@ -89,10 +96,6 @@ public class P83_SecondLeastElement {
 	 * 
 	 */
 	private char findX(String s){
-		int j=98;
-		char ch=(char) j;
-		System.out.println(ch);
-		System.out.println(ch);
 		Map<Character,Integer> map=new TreeMap<Character,Integer>();
 		for (int i = 0; i < s.length(); i++) {
 			map.put(s.charAt(i), map.getOrDefault(s.charAt(i),0)+1);			

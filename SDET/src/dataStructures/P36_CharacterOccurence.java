@@ -95,6 +95,16 @@ public class P36_CharacterOccurence {
     	
     }
 	@Test
+    public void Test5(){
+    	String str="eceba";//kew
+    	int k=3;
+    	int max=longestSubStringUsingASCII(str,k);
+    	System.out.println("str " + str+ " is "+ max);
+    	longestSubStringUsingASCII(str,k);
+    	//removeDuplicatesTwoPointer(customersArray);
+    	
+    }
+	@Test
     public void Test4(){
     	String str="eceeebaeceeeeee";//kew
     	int k=2;

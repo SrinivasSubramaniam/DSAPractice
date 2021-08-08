@@ -11,9 +11,9 @@ public class P25_MaxAverageSubArray {
 	
 	    @Test
 	    public void test1() {
-	        int[] nums = {1,12,-5,-6,50,3};
+	        int[] nums = {5,12,50,60,1,3};
 	        int k = 4;
-	        maxAverageSubArray(nums, k);
+	        maxAverageSubArraySimplified(nums, k);
 	    }
 	   
 
@@ -27,10 +27,21 @@ public class P25_MaxAverageSubArray {
     		sum=Math.max(sum, tempSum);			
 		}
     	System.out.println(sum/4);
-    	
     	return sum/4;
-
-	
-	
+    }
+    private double maxAverageSubArraySimplified(int[] nums, int k) {    	
+    	double tempSum=0;
+    	double sum=Integer.MIN_VALUE;
+    	   	
+    	for (int i = 0; i < nums.length; i++) {
+    		tempSum+=nums[i];
+    		if (i>=k-1){
+    		sum=Math.max(tempSum, sum);
+    		tempSum-=nums[i-(k-1)];
+    		
+    		}
+		}
+    	System.out.println(sum/4);
+    	return sum/4;
     }
 }

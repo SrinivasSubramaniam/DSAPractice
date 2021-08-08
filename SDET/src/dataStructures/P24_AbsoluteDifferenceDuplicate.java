@@ -101,8 +101,6 @@ public class P24_AbsoluteDifferenceDuplicate {
 		}
 			return false;
 		}
-
-	
-	
-
+    
+  
 }
