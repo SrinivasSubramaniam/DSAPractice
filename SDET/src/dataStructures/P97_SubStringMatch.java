@@ -40,8 +40,6 @@ public class P97_SubStringMatch {
 	 * 
 	 */
 	
-	
-	/// 0 1 1 2 3 
 	@Test
     public void test1(){
         String str1="welcome to test leaf to achieve";
