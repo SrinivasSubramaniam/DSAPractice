@@ -9,7 +9,7 @@ import java.util.Set;
 import org.junit.*;
 
 
-public class P97_Fibonacii {
+public class P97_SquareRootJava {
 
 	/*
 	 * 
@@ -44,30 +44,19 @@ public class P97_Fibonacii {
 	/// 0 1 1 2 3 
 	@Test
     public void test1(){
-        int nums=9;
+        int nums=15;
         findXRecursion(nums);
     }
 	
-	private int findX(int n){
-		
-		int n1=0,n2=1, n3=0;
-		for (int i = 1; i < n; i++) {
-			n3=n1+n2;
-			n1=n2;
-			n2=n3;
-			System.out.print(n3+ " " );
-		}
-		return n;
+private double findXRecursion(int n){
+	double squareroot = n / 2;
+	double temp=0;
+	while (temp-squareroot!=0){
+		temp=squareroot;
+		squareroot=(temp+(n/temp))/2;
 	}
-	
-private void findXRecursion(int n){
-	for (int i=0;i<=n;i++){
-		System.out.print(findFiboRecursion(i)+" ");
-	}
-	}
-private int findFiboRecursion (int n){
-	if (n<=1) return n;
-	return findFiboRecursion(n-1)+findFiboRecursion(n-2);
+	System.out.println(squareroot);
+	return squareroot;
 	
 }
 }

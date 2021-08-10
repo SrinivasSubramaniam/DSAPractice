@@ -130,11 +130,26 @@ Output: "/c"
 	 * 
 	 */
 	private String findX(String str){
-		String[] directory = str.split("/");
+		String[] split = str.split("/");
 		Stack<String> stack=new Stack<String>();
-		for (String dir : directory) {
-			
+		for (String eachString : split) {
+			if (eachString.equals(".")||eachString.isEmpty()){
+				continue; 
+			}else if(eachString.equals("..")){
+				if (!stack.isEmpty())
+				stack.pop();			
+			}else {
+				stack.push(eachString);
+			}
 		}
-		return str;
+		StringBuffer sb=new StringBuffer();
+		if (stack.isEmpty()) sb.insert(0, "/");
+		while (!stack.isEmpty()){
+			sb.insert(0, stack.pop());
+			sb.insert(0, "/");
+		}
+		
+		System.out.println(sb);
+		return sb.toString();
 	}
 }

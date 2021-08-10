@@ -9,7 +9,7 @@ import java.util.Set;
 import org.junit.*;
 
 
-public class P96_Problems {
+public class P96_LongestSubStringWithoutRepeating {
 
 	/*
 	 * 

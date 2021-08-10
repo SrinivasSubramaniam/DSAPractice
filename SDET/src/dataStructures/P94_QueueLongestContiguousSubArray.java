@@ -1,22 +1,19 @@
 package dataStructures;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.Stack;
 
 import org.junit.*;
 
 
-public class P70_StackRemoveAdjacentDuplicates {
+public class P94_QueueLongestContiguousSubArray {
 	/*
-	 *Find out how many missing brackets to make a valid parentheses !!  
-Input can have only open and closing brackets ( ) 
-String st = “((((” -> 4 brackets  
-String st = “(()))” -> 1 bracket  
+	 *
 	 * 
 	 * 
-	 * 1)What is the input(s)? - String
-	 * What is the expected output? integer
+	 * 1)What is the input(s)? - 
+	 * What is the expected output? 
 	 * Do I have constraints to solve the problem? -
 	 * Do I have all informations to go to next step!! 
 	 * How big is your test data set will be?
@@ -24,9 +21,9 @@ String st = “(()))” -> 1 bracket
 	 *
 	 * 2) Test Data Set Minimum of 3 data set !!
 	 * 
-	 * Positive data- “((((”
-	 * Negative data- "{}" -->  
-	 * Edge Case- "}}{{"
+	 * Positive data- 
+	 * Negative data- 
+	 * Edge Case-
 	 * 
 	 * Validate the data set with the interviewer
 	 *
@@ -60,41 +57,36 @@ String st = “(()))” -> 1 bracket
 	 */
 	@Test
     public void test1(){
-       String str="abaac"; 
-       Assert.assertEquals(findX(str),"abc");
+        int[] nums ={8,2,4,7};
+        int k=4;
+        Assert.assertEquals(findX(nums, k), 2);
         
     }
 	@Test
     public void test2(){
-       String str="abcd"; 
-       Assert.assertEquals(findX(str),"abcd");
+        int[] nums ={10,1,2,4,7,2};
+        int k=5;
+        Assert.assertEquals(findX(nums, k), 4);
         
     }
-	@Test
-    public void test3(){
-       String str="aaa"; 
-       Assert.assertEquals(findX(str),"a");
-        
-    }
-	
-	
-	
-	private String findX(String str){
-		char[] ch = str.toCharArray();
-		StringBuilder sb=new StringBuilder();
-		Stack<Character> stack=new Stack<Character>();
-		for (int i = 0; i < ch.length; i++) {
-			if (!stack.isEmpty() && stack.peek()==ch[i]) stack.pop();
-			else stack.push(ch[i]);
+	private int findX(int[] nums,int k){
+		int left=0,right=0;
+		int longest=Integer.MIN_VALUE,min=Integer.MAX_VALUE,max=Integer.MIN_VALUE;
+		while (left<nums.length&&right<nums.length){
+			min=Math.min(min, Math.min(nums[left], nums[right]));
+			max=Math.max(max, Math.max(nums[left], nums[right]));
+			//min=Math.min(min, nums[right]);
+			//max=Math.max(max, nums[right]);
+			
+			if (Math.abs(max-min)<=k){
+				longest=Math.max(longest, right-left+1);
+				right++;
+			}else{
+				right=++left;
+				min=nums[left];
+				max=nums[left];
+			}
 		}
-		while (!stack.isEmpty()){
-			sb.append(stack.pop());
-		}
-		/*for (char chr: stack) {
-			System.out.println(chr);
-		}*/
-		return sb.reverse().toString();
-	
-		
+		return longest;
 	}
 }

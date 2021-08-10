@@ -54,22 +54,27 @@ public class P97_DecodeString {
         String str1="3[a2[c]]";
         System.out.println(findXRecurseMethod(str1));
     }
-
-
-	
+	@Test
+    public void test3(){
+        String str1="3[a[c]]";
+        System.out.println(findXRecurseMethod(str1));
+    }
 
 	private String findXRecurseMethod(String str1) {
 		int closingBracket=str1.indexOf(']');
 		if (closingBracket==-1) return str1;
-		int openingBracket=str1.indexOf('[');
+		int openingBracket=closingBracket;
+		while (str1.charAt(--openingBracket)!='['){};
 		int digitIndex=openingBracket-1;
 		int digitValue;
-		if(!Character.isDigit(str1.charAt(openingBracket-1)))  digitValue = 1;
+		if(!Character.isDigit(str1.charAt(openingBracket-1))){
+			digitValue = 1;
+			digitIndex =openingBracket;
+		}
 		else digitValue=Character.getNumericValue(str1.charAt(openingBracket-1));
 		StringBuilder sb=new StringBuilder();
-		while (digitValue>0){
+		while (digitValue-->0){
 			sb.append(str1.substring(openingBracket+1,closingBracket));
-			digitValue--;
 		}
 		str1=findXRecurseMethod(str1.substring(0, digitIndex)+sb.toString()+str1.substring(closingBracket+1));
 		return str1;

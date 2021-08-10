@@ -90,7 +90,6 @@ String st = “(()))” -> 1 bracket
 				while (k>0){
 					for (int j = list.size()-1; j >=0; j--) {
 						stack.push(list.get(j));
-						
 					}
 					k--;
 				}
