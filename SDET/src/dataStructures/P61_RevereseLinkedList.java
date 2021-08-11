@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class P61_RevereseLinkedList {
 	
-	Node head;
+	//Node head;
 	//When creating a new Node
 	 public class Node{
 		 int value;
@@ -50,7 +50,8 @@ public class P61_RevereseLinkedList {
 		 Node head = addNote(1);
 		 head.next=addNote(3);
 		 head.next.next=addNote(5);
-		 reverseNode(head);
+		 Node node=reverseNode(head);
+		 printAllNodes(node);
 	 }
 	
 }

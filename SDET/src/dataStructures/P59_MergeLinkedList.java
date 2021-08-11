@@ -34,6 +34,7 @@ public class P59_MergeLinkedList {
 	 }
 	 
 	 public Node merged(Node node1,Node node2){
+		 
 		 Node head=new Node();
 		 Node prev=head;
 		 while (node1!=null && node2!=null){
@@ -53,6 +54,19 @@ public class P59_MergeLinkedList {
 		 prev.next=node1==null? node2:node1;
 		 return head.next;
 	 }
+/*public Node merged(Node node1,Node node2){
+		 
+		 Node head=addNote(5);
+		 Node prev=head;
+		 head.next=addNote(10);
+		 prev=prev.next;
+		 head.next=addNote(15);
+		 head.next=addNote(20);
+		 //for any left out nodes
+		 prev.next=node1==null? node2:node1;
+		 return head.next;
+	 }*/
+	 
 	 
 	 public Node mergedLinkesList(Node node1,Node node2){
 		 if (node1==null) return node2;
