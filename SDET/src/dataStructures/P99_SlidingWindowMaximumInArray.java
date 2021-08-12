@@ -62,7 +62,7 @@ public class P99_SlidingWindowMaximumInArray {
 	}
 	private int[] findMinSumOptimised(int[] nums,int k){
 		Map<Integer, Integer> map =new HashMap<Integer, Integer>();
-		int[] outPut=new int[nums.length-(k-1)];
+		//int[] outPut=new int[nums.length-(k-1)];
 		int l=0;
 		int max=Integer.MIN_VALUE;
 		for (int i=0;i<k;i++){
