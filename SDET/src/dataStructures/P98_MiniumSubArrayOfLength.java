@@ -53,35 +53,34 @@ public class P98_MiniumSubArrayOfLength {
 		for (int i = 0; i < k; i++) {
 			sum+=nums[i];
 		}
-		sum=Math.min(sum, minSum);
-		for (int i = 0; i < nums.length-k+1; i++) {
-			sum+=nums[i+k-1]-nums[i];
+		minSum=Math.min(sum, minSum);
+		for (int i = 1; i <= nums.length-k; i++) {
+			sum+=nums[i+k-1]-nums[i-1];
 			if (sum<minSum){
 				minSum=sum;
-				left=i+1;
+				left=i;
 			}
 		}
+		System.out.println(left);
 		System.out.println(Arrays.toString(Arrays.copyOfRange(nums, left, left+k)));
 		return Arrays.copyOfRange(nums, left, left+k);
 	}
 	private int[] findMinSumOptimised(int[] nums,int k){
 		int minSum=Integer.MAX_VALUE;
 		int sum=0;
-		int left=0;
-		for (int i=0;i<nums.length-k+1;i++){
+		int right=0;
+		for (int i=0;i<nums.length;i++){
 			sum+=nums[i];
-			if (i>=k-1){
+			if (i+1>=k){
 				if (sum<minSum){
 					minSum=sum;
-					if (i==k-1) left=i-(k-1);
-					else left=i;
+					right=i+1;
 				}
-				sum-=nums[i];
+				sum-=nums[i-(k-1)];
 			}
 		}
-		System.out.println(left);
-		System.out.println(nums[left]);
-		System.out.println(Arrays.toString(Arrays.copyOfRange(nums, left, left+k)));
+		System.out.println(right);
+		System.out.println(Arrays.toString(Arrays.copyOfRange(nums, right-k, right)));
 		return nums;
 	}
 

@@ -35,6 +35,7 @@ public class P59_MergeLinkedList {
 	 
 	 public Node merged(Node node1,Node node2){
 		 
+		 
 		 Node head=new Node();
 		 Node prev=head;
 		 while (node1!=null && node2!=null){

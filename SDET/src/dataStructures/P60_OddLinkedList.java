@@ -48,7 +48,6 @@ public class P60_OddLinkedList {
 	     */
 
 	    public Node oddEven(Node node) {
-	    	
 	    	if (node == null || node.next == null) return node;	
 	        Node oddNode = node;
 	        Node evenNode=node.next;
@@ -61,8 +60,6 @@ public class P60_OddLinkedList {
 	        }
 	        oddNode.next=allEven;
 	        return node;
-
-	        
 	    }
 
 	    @Test

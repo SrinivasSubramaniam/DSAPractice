@@ -76,7 +76,8 @@ public class P97_DecodeString {
 		while (digitValue-->0){
 			sb.append(str1.substring(openingBracket+1,closingBracket));
 		}
-		str1=findXRecurseMethod(str1.substring(0, digitIndex)+sb.toString()+str1.substring(closingBracket+1));
+		System.out.println("before recursion"+ str1.substring(0, digitIndex)+sb.toString()+str1.substring(closingBracket+1));
+		str1=findXRecurseMethod(str1.substring(0, digitIndex)+sb.toString()+str1.substring(closingBracket+1));//aaa3[c]d
 		return str1;
 	}
 	
@@ -93,7 +94,7 @@ public class P97_DecodeString {
             subString = subString.concat(subString);
             digit--;
         }
-        s = decodeUsingRecursion(subString+str.substring(closingIndex+1)+decodeUsingRecursion(s));
+        s = decodeUsingRecursion(subString+str.substring(closingIndex+1)+decodeUsingRecursion(s));//
         return decodeUsingRecursion(s);
     }
 	
