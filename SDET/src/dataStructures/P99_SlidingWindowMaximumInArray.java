@@ -76,8 +76,6 @@ public class P99_SlidingWindowMaximumInArray {
 			max=Collections.max(map.values());
 			nums[l++]=max;
 		}
-		
-		//System.out.println(Arrays.toString(outPut));
 		System.out.println(Arrays.toString(Arrays.copyOfRange(nums, 0, l)));
 		  return Arrays.copyOfRange(nums, 0, l); 
         

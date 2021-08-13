@@ -9,7 +9,7 @@ import java.util.Set;
 
 import org.junit.*;
 
-public class P99_oddEvenPractice {
+public class P9911_oddEvenPractice {
 	Node head;
 
 	public class Node {

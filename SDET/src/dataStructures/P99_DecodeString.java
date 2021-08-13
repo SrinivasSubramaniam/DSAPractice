@@ -11,39 +11,26 @@ import javax.naming.spi.DirObjectFactory;
 import org.junit.*;
 
 
-public class P97_DecodeString {
+public class P99_DecodeString {
 
 	/*
 	 * 
-	 *1) Input-
-	 *	 Output -
-	 *	 Constraints-
+	 *1) Input-String
+	 *	 Output -String
+	 *	 Constraints-User recursion
 	 *
 	 *2) Test Data
 	 *
-	 * 	Positive data- 
-	 * 	Negative data- 
-	 * 	Edge Case-
+	 * 	Positive data- 3[a]2[bc]
+	 * 	Negative data- [ab]
+	 * 	Edge Case-3[a[c]]
 	 * 
-	 *3)Methods to Solve-
+	 *3)Methods to Solve- Recursion
 	 * 
 	 *4)O Notations-
 	 * 
 	 *5)Psuedo code
 	 */
-	
-	/*
-	 * 1. Simplest possible case- 0
-	 * 2. Test data - 5 ,4 
-	 * 3. Edge case- 
-	 * 4. Pattern- (n-1)
-	 * 
-	 * 
-	 * 
-	 */
-	
-	
-	/// 0 1 1 2 3 
 	@Test
     public void test1(){
         String str1="3[a]2[bc]";
@@ -59,6 +46,20 @@ public class P97_DecodeString {
         String str1="3[a[c]]";
         System.out.println(findXRecurseMethod(str1));
     }
+	@Test
+    public void test4(){
+        String str1="[ac]";
+        System.out.println(findXRecurseMethod(str1));
+    }
+	
+	/*Find Closing bracket index
+	 *Base condition: If closing bracket index is -1 then return String
+	 *Do a while loop and check the associated opening bracket from closing bracket and store it in the opening bracket Index
+	 *If there is no digit before the opening bracket assign the digitValue as 1
+	 *else get the numeric value of that character
+	 *Create a string builder and do a while loop for the digit value and append from opening to closing bracket
+	 *Make a recursive call with the parameter including substring before digitValue and concatenated string value and value after closing bracket
+	 */
 
 	private String findXRecurseMethod(String str1) {
 		int closingBracket=str1.indexOf(']');
@@ -67,6 +68,7 @@ public class P97_DecodeString {
 		while (str1.charAt(--openingBracket)!='['){};
 		int digitIndex=openingBracket-1;
 		int digitValue;
+		if (openingBracket==0) return str1.substring(openingBracket+1,closingBracket);
 		if(!Character.isDigit(str1.charAt(openingBracket-1))){
 			digitValue = 1;
 			digitIndex =openingBracket;
@@ -76,26 +78,7 @@ public class P97_DecodeString {
 		while (digitValue-->0){
 			sb.append(str1.substring(openingBracket+1,closingBracket));
 		}
-		System.out.println("before recursion"+ str1.substring(0, digitIndex)+sb.toString()+str1.substring(closingBracket+1));
-		str1=findXRecurseMethod(str1.substring(0, digitIndex)+sb.toString()+str1.substring(closingBracket+1));//aaa3[c]d
-		return str1;
+		return findXRecurseMethod(str1.substring(0, digitIndex)+sb.toString()+str1.substring(closingBracket+1));
 	}
-	
-	private String decodeUsingRecursion(String s) {
-        StringBuilder str = new StringBuilder(s);
-        if(str.indexOf("]")==-1) return "";
-        int closingIndex = str.indexOf("]");
-        int openingIndex = str.indexOf("[");
-        int digit;
-        if(!Character.isDigit(str.charAt(openingIndex-1)))  digit = 1;
-        else digit = str.charAt(openingIndex-1);
-        String subString = str.substring(openingIndex+1,closingIndex);
-        while(digit>0) {
-            subString = subString.concat(subString);
-            digit--;
-        }
-        s = decodeUsingRecursion(subString+str.substring(closingIndex+1)+decodeUsingRecursion(s));//
-        return decodeUsingRecursion(s);
-    }
 	
 }

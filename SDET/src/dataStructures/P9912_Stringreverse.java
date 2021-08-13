@@ -9,7 +9,7 @@ import java.util.Set;
 import org.junit.*;
 
 
-public class P97_SquareRootJava {
+public class P9912_Stringreverse {
 
 	/*
 	 * 
@@ -40,23 +40,24 @@ public class P97_SquareRootJava {
 	 * 
 	 */
 	
-	
-	/// 0 1 1 2 3 
 	@Test
     public void test1(){
-        int nums=15;
-        findXRecursion(nums);
+        String str1="amazon";
+        System.out.println(findXRecursion(str1));
     }
-	
-private double findXRecursion(int n){
-	double squareroot = n / 2;
-	double temp=0;
-	while (temp-squareroot!=0){
-		temp=squareroot;
-		squareroot=(temp+(n/temp))/2;
+	@Test
+    public void test2(){
+        String str1=" ";
+        System.out.println(findXRecursion(str1));
+    }
+
+	private String findXRecursion(String str1) {
+		if (str1.isEmpty()) return str1;
+		else
+		{
+			return  findXRecursion(str1.substring(1))+str1.charAt(0);
+		}
 	}
-	System.out.println(squareroot);
-	return squareroot;
 	
-}
+	
 }

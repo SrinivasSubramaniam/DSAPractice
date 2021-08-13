@@ -9,7 +9,7 @@ import java.util.Set;
 import org.junit.*;
 
 
-public class P97_SquareNumbers {
+public class P99_SquareNumbers {
 
 	/*
 	 * 

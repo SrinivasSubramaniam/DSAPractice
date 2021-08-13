@@ -9,7 +9,7 @@ import java.util.Set;
 import org.junit.*;
 
 
-public class P97_Fibonacii {
+public class P991_Fibonacii {
 
 	/*
 	 * 

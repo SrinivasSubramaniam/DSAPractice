@@ -9,7 +9,7 @@ import java.util.Set;
 import org.junit.*;
 
 
-public class P97_SubStringMatch {
+public class P9913_SubStringMatch {
 
 	/*
 	 * 
