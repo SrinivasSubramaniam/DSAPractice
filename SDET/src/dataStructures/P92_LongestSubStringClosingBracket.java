@@ -99,7 +99,7 @@ public class P92_LongestSubStringClosingBracket {
 				if (!stack.isEmpty()){
 				count=i-stack.peek();
 				longest=Math.max(longest, count);				
-			}
+			    }
 				else{
 					stack.push(i);
 				}
@@ -107,7 +107,7 @@ public class P92_LongestSubStringClosingBracket {
 			
 		}
 		System.out.println(longest);
-		if (longest==Integer.MIN_VALUE) return 0;
+		if (longest==Integer.MIN_VALUE) return 2;
 		return longest;
 	}
 }
