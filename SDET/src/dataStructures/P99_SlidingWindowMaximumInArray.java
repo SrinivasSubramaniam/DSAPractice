@@ -104,6 +104,7 @@ public class P99_SlidingWindowMaximumInArray {
 				r[index++] = nums[deque.peek()];
 			}
 		}
+		System.out.println(Arrays.toString(r));
 		return r;
         
 	}

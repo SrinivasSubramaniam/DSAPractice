@@ -12,7 +12,7 @@ import java.util.Stack;
 import org.junit.*;
 
 
-public class P99150818_Practice2 {
+public class P99150818_TargetSum {
 
 	/*
 	 * Given an int array [1,4,20,3,10,5] and target sum 33.
@@ -99,7 +99,7 @@ Time : 20 Minutes
 
 	private boolean findX(int[] input, int target) {
 		int left=0,right=0,windowSum=0;
-		while (right<input.length){
+		while (left<input.length && right<input.length){
 			windowSum+=input[right++];
 			if (windowSum == target) return true;
 			if (windowSum>target){

@@ -13,6 +13,7 @@ public class P39_SingleNumber {
 			if (!list1.contains(i))
 			{
 				list1.add(i);
+				
 				System.out.println(list1);
 			}else
 			{
