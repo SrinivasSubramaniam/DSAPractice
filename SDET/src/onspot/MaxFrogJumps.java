@@ -27,6 +27,7 @@ public class MaxFrogJumps {
 	@Test
 	public void example4() {
 		int[] nums = {5,7,16,9,10,15,14,13,12,7,6,3,5,2,1};
+		
 		System.out.println(maxFrogJumps(nums));
 	}
 	
