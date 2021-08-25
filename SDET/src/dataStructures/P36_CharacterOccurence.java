@@ -88,9 +88,9 @@ public class P36_CharacterOccurence {
     public void Test1(){
     	String str="eceba";//kew
     	int k=2;
-    	int max=longestSubStringUsingASCII(str,k);
+    	int max=longestSubString(str,k);
     	System.out.println("str " + str+ " is "+ max);
-    	longestSubStringUsingASCII(str,k);
+    	longestSubString(str,k);
     	//removeDuplicatesTwoPointer(customersArray);
     	
     }
@@ -165,6 +165,7 @@ public class P36_CharacterOccurence {
 	    		System.out.println(str.substring(left, right));
 	    	}
 	    	
+	    	
 	    	return max;			
 		}
 	    
@@ -185,7 +186,7 @@ public class P36_CharacterOccurence {
 	    		}
 	    		max = Math.max(max,right-left+1);
 	    	}
-	    	System.out.println(max);
+	    	//System.out.println(max);
 	    	return max;			
 		}
 } 
