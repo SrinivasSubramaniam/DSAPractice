@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-public class MeetingRooms {
+public class MeetingRoomsNeeded {
 	/*
 	 * 
 	 * 1) Input-

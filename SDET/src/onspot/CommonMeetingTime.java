@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class CommonMeeting {
+public class CommonMeetingTime {
 	/*
 	 * 
 	 * 1) Input-
