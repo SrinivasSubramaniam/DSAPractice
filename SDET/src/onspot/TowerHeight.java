@@ -7,10 +7,28 @@ import org.junit.Test;
 public class TowerHeight {
 	
 	/*
-	 * Sort the array
-	 * Create two pointers one with lowest and one with highest
-	 * add the k if the value is lower and delete if the value is higher
-	 *  
+	 * Given heights of n towers and a value k. We have to either increase or
+	 * decrease height of every tower by k (only once) where k > 0. The task is
+	 * to minimise the difference between the heights of the longest and the
+	 * shortest tower after modifications, and output this difference.
+	 * 
+	 * arr[] = {1, 15, 10}, k = 6 Output : Maximum difference is 5. 
+	 * Explanation: We change 1 to 7, 15 to 9 and 10 to 4. 
+	 * Maximum difference is 5 (between 4 and 9). 
+	 * We can't get a lower difference.
+	 * 
+	 * 
+	 * Pseudo code
+	 * Sort the array 
+	 * Create two pointers one with lowest and one with highest by adding k values
+	 * find the difference between first and last
+	 * iterate the index from 0 to last-1 index
+	 * for each index 
+	 * 			--> add the index with k and compare with max to find current max
+	 * 			--> subtract the index+1 -k and compare with min to find the current min
+	 * Subtract current max and current min to find the minimum difference
+	 * return minimum difference
+	 * 
 	 * 
 	 */
 	

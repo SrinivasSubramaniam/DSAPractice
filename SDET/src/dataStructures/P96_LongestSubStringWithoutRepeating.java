@@ -55,6 +55,11 @@ public class P96_LongestSubStringWithoutRepeating {
         String s="abab";
         Assert.assertEquals(findX(s),2);
     }
+	@Test
+    public void test6(){
+        String s="pwwkew";
+        Assert.assertEquals(findX(s),3);
+    }
 	
 	private int findX(String s){
 		int max=Integer.MIN_VALUE;
@@ -62,15 +67,24 @@ public class P96_LongestSubStringWithoutRepeating {
 		Map<Character, Integer> map=new HashMap<Character, Integer>();
 		for (int i = 0; i < s.length(); i++) {
 			if (map.containsKey(s.charAt(i))) {
-				map.put(s.charAt(i), i);
-				left++;
+				left=Math.max(left, map.get(s.charAt(i))+1);
 			}
-			else {
 				map.put(s.charAt(i), i);
 				max=Math.max(max, (i-left)+1);
-			}
+				
 		}
 		System.out.println(max);
 		return max;
 	}
+	public int lengthOfLongestSubstring(String s) {
+        int[] map = new int[128];
+        int res = 0;
+        int j = 0;
+        for(int i = 0; i< s.length(); i++) {
+            j = Math.max(j,map[s.charAt(i)]);
+            res = Math.max(res, i-j+1);
+            map[s.charAt(i)] = i+1;
+        }
+        return res;
+    }
 }
