@@ -97,7 +97,6 @@ public int maxFrogJumpsMyBrute(int[] nums){
 	public int maxFrogJumpsBSA(int[] nums){
 		ArrayList<Integer> sub = new ArrayList<>();
 		sub.add(nums[0]);
-
 		for (int i = 1; i < nums.length; i++) {
 			int num = nums[i];
 			if (num < sub.get(sub.size() - 1)) {
@@ -109,7 +108,6 @@ public int maxFrogJumpsMyBrute(int[] nums){
 					sub.set(j, num);
 			}
 		}
-
 		return sub.size()-1;
 	}
 

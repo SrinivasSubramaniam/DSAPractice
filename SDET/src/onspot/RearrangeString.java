@@ -43,6 +43,11 @@ public class RearrangeString {
 		String str="aaab";
 		System.out.println(findX(str));
 	}
+	@Test
+	public void test3(){
+		String str="vvvlo";
+		System.out.println(findX(str));
+	}
 
 	private String findX(String str) {
 		Map<Character,Integer> map=new HashMap<Character,Integer>();
@@ -50,20 +55,39 @@ public class RearrangeString {
 			map.put(str.charAt(i), map.getOrDefault(str.charAt(i),0)+1);
 		}
 		StringBuilder sbr=new StringBuilder();
-		Set<Entry<Character, Integer>> set = map.entrySet();
-		ArrayList<Entry<Character, Integer>> list = new ArrayList<>(set);
-		Collections.sort(list,(a,b)->(a.getKey().compareTo(b.getKey())));
+		Set<Map.Entry<Character, Integer>> set = map.entrySet();
+		ArrayList<Map.Entry<Character, Integer>> list = new ArrayList<>(set);
+		Collections.sort(list,(a,b)->(b.getValue().compareTo(a.getValue())));
 		System.out.println(list);
+		Character[] arr=new Character[str.length()];
+		int j=0;
+		Entry<Character, Integer> entry1 = list.get(j);
+		while (j<arr.length){
+			arr[j]=entry1.getKey();
+			entry1.setValue(entry1.getValue()-1);
+			j+=2;
+		}
 		
 		while (!list.isEmpty()){
-			int i=0;
+			int i=1;
 			while (i<list.size()){
 				Entry<Character, Integer> entry = list.get(i);
 				sbr.append(entry.getKey());
 				entry.setValue(entry.getValue()-1);
 				if (entry.getValue()==0){
 					list.remove(i);
-				}else i++;
+				}
+				
+				Entry<Character, Integer> secondEntry = list.get(i+1);
+				sbr.append(secondEntry.getKey());
+				secondEntry.setValue(secondEntry.getValue()-1);
+				if (secondEntry.getValue()==0){
+					list.remove(i);
+				}
+				
+				
+				
+				else i++;
 			}			
 		}
 		int length=sbr.length();

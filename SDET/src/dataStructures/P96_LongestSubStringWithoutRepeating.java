@@ -3,6 +3,7 @@ package dataStructures;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -87,4 +88,20 @@ public class P96_LongestSubStringWithoutRepeating {
         }
         return res;
     }
+	
+	public int lengthOfLongestSubstringSet(String s) {
+	    int i = 0, j = 0, max = 0;
+	    Set<Character> set = new HashSet<Character>();
+	    
+	    while (j < s.length()) {
+	        if (!set.contains(s.charAt(j))) {
+	            set.add(s.charAt(j++));
+	            max = Math.max(max, set.size());
+	        } else {
+	            set.remove(s.charAt(i++));
+	        }
+	    }
+	    
+	    return max;
+	}
 }
