@@ -79,6 +79,7 @@ public class TowerHeight {
 			int subtractMin = Math.min(min, nums[i + 1] - k);
 			outPut = Math.min(outPut, addMax - subtractMin);
 		}
+		System.out.println(outPut);
 		return outPut;
 
 	}
