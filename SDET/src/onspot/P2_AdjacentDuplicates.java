@@ -70,7 +70,7 @@ public class P2_AdjacentDuplicates {
 	 */
 		
 	
-	@Test
+	/*@Test
     public void test1(){
 		String s="deeedbbcccbdaa";
 		int k=3;
@@ -99,7 +99,7 @@ public class P2_AdjacentDuplicates {
 		String s="aaa";
 		int k=3;
 		removeDuplicate(s,k);
-    }
+    }*/
 	
 	private String removeDuplicate(String s, int k) {
 		//Create a stack for characters and stack for character adjacent counts

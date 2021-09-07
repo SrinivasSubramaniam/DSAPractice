@@ -67,7 +67,7 @@ public class P1_GroupingAnagrams {
 	 */
 		
 	
-	@Test
+	/*@Test
     public void test1(){
 		
 		String[] input={"eat","tea","tan","ate","nat","bat"};
@@ -84,7 +84,7 @@ public class P1_GroupingAnagrams {
 		
 		String[] input={"a"};
 		System.out.println(anagrams(input));
-    }
+    }*/
 	/*
 	 * Create a Map to store the ascii String as key and list of strings as value
 	 * Iterate the array
