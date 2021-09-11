@@ -58,17 +58,17 @@ public class P99150819_TrappingRainWater {
 	@Test
     public void test1(){
 		int[] input={0,4,2,0,3,2,5,2,7,2};
-		findXStack(input);
+		findX(input);
     }
 	@Test
     public void test2(){
 		int[] input={1,2,3,0,0,0};
-		findXStack(input);
+		findX(input);
     }
 	@Test
     public void test3(){
 		int[] input={0,4,2,0,3,2,5,2,3,2};
-		findXStack(input);
+		findX(input);
     }
 	/*Psuedo code
 	 * 

@@ -1,6 +1,9 @@
 package onspot;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
@@ -30,7 +33,7 @@ public class ValidStringParenthesisRemoval {
 	 * 
 	 */
 	private void findValidString(String str) {
-		
+		Map<Character,Integer> map=new HashMap<Character,Integer>();
 		Stack<Integer> stack=new Stack<Integer>();
 		StringBuilder sbr=new StringBuilder(str);
 		for (int i=0;i<sbr.length();i++){
