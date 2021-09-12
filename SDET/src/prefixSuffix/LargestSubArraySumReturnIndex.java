@@ -1,4 +1,4 @@
-package onspot;
+package prefixSuffix;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -9,13 +9,7 @@ import java.util.TreeSet;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LargestSubArraySum {
-	/*@Test
-	public void test1(){
-		int[] arr={10, 5, 2, 7, 1, 9};
-		int k=15;
-		Assert.assertEquals(4,findLargest(arr,k));
-	}*/
+public class LargestSubArraySumReturnIndex {
 	
 	@Test
 	public void test1(){
@@ -62,9 +56,6 @@ public class LargestSubArraySum {
         }
         
         System.out.println(Arrays.toString(Arrays.copyOfRange(A, ending_index - len+1 , ending_index+1)));
- 
-        // print the subarray
-       // System.out.println("[" + (ending_index - len + 1) + ", " + ending_index + "]");
         
         
          
