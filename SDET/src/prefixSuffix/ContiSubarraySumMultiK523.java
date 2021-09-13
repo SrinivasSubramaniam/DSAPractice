@@ -15,8 +15,15 @@ public class ContiSubarraySumMultiK523 {
 	}
 	@Test
 	public void test2() {
-		int[] nums={23,2,6,4,7};
+		int[] nums={2,4};
 		int k=6;
+		System.out.println(checkSubarraySum(nums,k));
+
+	}
+	@Test
+	public void test3() {
+		int[] nums={1,0};
+		int k=2;
 		System.out.println(checkSubarraySum(nums,k));
 
 	}

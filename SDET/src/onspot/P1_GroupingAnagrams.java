@@ -67,11 +67,27 @@ public class P1_GroupingAnagrams {
 	 */
 		
 	
-	/*@Test
+	@Test
     public void test1(){
 		
 		String[] input={"eat","tea","tan","ate","nat","bat"};
 		System.out.println(anagrams(input));
+    }
+	@Test
+    public void test4(){
+		String[] strs = {"eat","tea","tan","ate","nat","bat"};
+		String[] first={"eat", "tea", "ate"};
+		String[] second={"bat"};
+		String[] third={"tan","nat"};
+		
+		
+		List<String> firstList = Arrays.asList(first);
+		List<String> secondList = Arrays.asList(second);
+		List<String> thirdList = Arrays.asList(third);
+		List<List<String>> list=new ArrayList<List<String>>();
+		list.add(new ArrayList<>(firstList));
+		list.add(new ArrayList<>(secondList));
+		list.add(new ArrayList<>(thirdList));
     }
 	@Test
     public void test2(){
@@ -84,7 +100,7 @@ public class P1_GroupingAnagrams {
 		
 		String[] input={"a"};
 		System.out.println(anagrams(input));
-    }*/
+    }
 	/*
 	 * Create a Map to store the ascii String as key and list of strings as value
 	 * Iterate the array
@@ -114,6 +130,7 @@ public class P1_GroupingAnagrams {
 			//return new List<List<String>()>();
 		}
 		List<List<String>> list=new ArrayList<List<String>>(map.values());
+		//System.out.println(list);
 		return list;
 		
 	}

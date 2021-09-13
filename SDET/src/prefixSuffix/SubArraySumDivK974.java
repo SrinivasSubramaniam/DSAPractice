@@ -1,7 +1,10 @@
 package prefixSuffix;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.junit.Test;
 import org.testng.Assert;
@@ -38,6 +41,8 @@ public class SubArraySumDivK974 {
 	 */
 	private int findSubArray(int[] nums, int k) {
 		int count=0,sum=0;
+		TreeSet<Integer> set=new TreeSet<>();
+		
 		Map<Integer,Integer> map=new HashMap<Integer,Integer>();
 		map.put(0, 1);
 		for (int i=0;i<nums.length;i++){
