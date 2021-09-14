@@ -32,8 +32,8 @@ public class SubStrSize3Distinct_1876 {
     4. Remove the first character and add the next char check if the size is 3 then increase the counter
     5. return counter  
     
-    Time Complexity - O(2N) -> O(N)
-    Space Complexity- O(M)
+    Time Complexity - O(2n) -> O(n)
+    Space Complexity- O(m)
     
     
     
@@ -70,6 +70,9 @@ public class SubStrSize3Distinct_1876 {
 	/*initialize a counter
 	 * start the loop from 1st index and iterate till legnth-1
 	 * Check for the 3 characters i-1,i,i+1 if they are not same then increase the counter 
+	 * 
+	 * Time Complexity - O(N)
+	 * Space COmplexity - O(1)
 	 * 
 	 */
 	

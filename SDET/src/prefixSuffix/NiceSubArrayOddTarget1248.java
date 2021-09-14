@@ -25,6 +25,28 @@ public class NiceSubArrayOddTarget1248 {
 		int k=2;
 		Assert.assertEquals(16, findNice(nums,k));
 	}
+	/*
+	 * Psuedo Code
+	 * 
+	 * Convert even to 0 and add it to the sum 
+	 * if the sum already exists do +1
+	 * if map contains sum-target then get the occurene value and add to the result
+	 * put sum value and its occurence
+	 * return result
+	 * 
+	 * 
+	 * Time complexity - O(n)
+	 * Space Complexity - O(n)
+	 * 
+	 * Time to solve
+	 * 
+	 * Pseudo code - 10 mins
+	 * Coding - 10 mins
+	 * Debug- 5 mins
+	 * 
+	 * 
+	 * 
+	 */
 	
 	private int findNice(int[] nums, int k) {
 		int cur = 0, ans =0;

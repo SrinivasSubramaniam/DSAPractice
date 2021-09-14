@@ -8,7 +8,7 @@ import org.junit.Test;
 
 
 
-public class ContainDuplicateII {
+public class ContainDuplicateII219 {
 	@Test
 	public void test1(){
 		int[] nums={1,2,3,1};
@@ -24,6 +24,9 @@ public class ContainDuplicateII {
     add return true
     
     finally return false
+    
+    Time Complexity - O(n)
+    Space Complexity - O(n)
     */
 	public boolean containsNearbyDuplicate(int[] nums, int k) {
         

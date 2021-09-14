@@ -23,7 +23,7 @@ public class MaXAverageSubArray643 {
     Calculate the max  
     return max/4
     
-    Time Complexity- O(N)
+    Time Complexity- O(n)
     Space Complexity- O(1)
     
 	Time - 

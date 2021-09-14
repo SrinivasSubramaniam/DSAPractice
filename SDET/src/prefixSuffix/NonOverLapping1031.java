@@ -11,7 +11,30 @@ public class NonOverLapping1031 {
 		System.out.println(maxSumTwoNoOverlap(nums, l, m));
 	}
 	
-	
+	/*Pseudo code
+	 * 
+	 * 
+	 * Calculate the prefix sum and store it in the same array
+	 * Create result, left max and right max
+	 * Calculate the max sum of l elements before m elements 
+	 * Calculate the max sum of m elements before l elements
+	 * Calculate the max result between lmax+ current sum - m sum and right max+ cuurent sum - l sum
+	 * 
+	 * Time Complexity - O(n)
+	 * Space Complexity - O(1)
+	 * 
+	 * Time 
+	 * 	Referred Solution
+	 * 	Psuedo code - 10 mins
+	 * 	Coding - 20 mins
+	 * 	Debug and run - 20 mins
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 	
 	  public int maxSumTwoNoOverlap(int[] A, int L, int M) {
 	        for (int i = 1; i < A.length; ++i)

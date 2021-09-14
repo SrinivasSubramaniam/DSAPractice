@@ -26,7 +26,7 @@ public class Longest1sAfterDeletingOne1493 {
     5. Calculate the max by doing right-left+1
     6. if count is 2 then move the left till the count is 1
     
-    Time Complexity- 0(N*M)
+    Time Complexity- 0(n*m)
     Space Complexity- O(1)
     
     Time 
