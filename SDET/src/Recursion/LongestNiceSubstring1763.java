@@ -3,23 +3,28 @@ package Recursion;
 import java.util.*;
 
 import org.junit.Test;
-import org.testng.Assert;
+import org.junit.Assert;
 
 public class LongestNiceSubstring1763 {
 	@Test
 	public void test1(){
 		String s="YazaAay";
-		Assert.assertEquals("aAa", longestNiceSubstring(s));
+		Assert.assertEquals("aAa", longestNiceString(s));
 	}
 	@Test
 	public void test2(){
 		String s="dDzeE";
-		Assert.assertEquals("dD", longestNiceSubstring(s));
+		Assert.assertEquals("dD", longestNiceString(s));
+	}
+	@Test
+	public void test4(){
+		String s="ijIJwuUnW";
+		Assert.assertEquals("ijIJ", longestNiceString(s));
 	}
 	@Test
 	public void test3(){
 		String s="c";
-		Assert.assertEquals("", longestNiceSubstring(s));
+		Assert.assertEquals("", longestNiceString(s));
 	}
 	/*Psuedo code
 	 * Recursion & Divide and Conquer
@@ -59,5 +64,48 @@ public class LongestNiceSubstring1763 {
         }
         return s;
     }
+	
+	/*
+	 * Create a map and hold the occurences of each character
+	 * iterate the string and put the character in map
+	 * create a left pointer to hold the starting index
+	 * iterate each character and see it has upper and lower case character
+	 * else move the left and increment the left pointer till it reaches right+1
+	 * 
+	 * calculate the max value at each iteration end
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	
+	public String longestNiceString(String s){
+		if (s.length()<2) return "";
+		Map<Character,Integer> map =new HashMap<Character,Integer>();
+		for(char c:s.toCharArray()) map.put(c, map.getOrDefault(c, 0)+1);
+		int left=0,max=0,startIndex=0;
+		for (int right=0;right<s.length();right++){
+			if (map.containsKey(Character.toUpperCase(s.charAt(right)))&&map.containsKey(Character.toLowerCase(s.charAt(right))) ){	
+
+				if (right-left > max){
+					max=right-left;
+					startIndex=left;
+				}
+								
+			}
+			else {
+				while (left<=right){
+					if (map.get(s.charAt(left))>1) map.put(s.charAt(left), map.get(s.charAt(left))-1);
+					else map.remove(s.charAt(left));
+					left++;
+				}
+			}
+			
+			
+		}
+		System.out.println(s.substring(startIndex,startIndex+max+1));
+		return s.substring(startIndex,startIndex+max+1);
+		
+	}
 
 }
