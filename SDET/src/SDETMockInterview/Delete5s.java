@@ -5,11 +5,11 @@ import org.junit.Test;
 import org.junit.Assert;
 
 public class Delete5s {
-	/*@Test
+	@Test
 	public void test1(){
 		int n=15958;
 		Assert.assertEquals(1958, delete5(n));
-	}*/
+	}
 	@Test
 	public void test2(){
 		int n=-5859;
@@ -34,7 +34,7 @@ public class Delete5s {
 				String temp= s.substring(0,i)+s.substring(i+1);
 				int tempInt = Integer.parseInt(temp);
 				max=Math.max(tempInt, max);
-				 }
+			 }
 			 }
 		 return max;
 		
