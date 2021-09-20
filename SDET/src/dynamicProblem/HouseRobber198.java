@@ -2,10 +2,15 @@ package dynamicProblem;
 
 import org.junit.*;
 
-public class HouseRobber {
+public class HouseRobber198 {
 	@Test
 	public void test1(){
 		int[] nums={1,2,3,1};
+		Assert.assertEquals(4,findMaxMoney(nums));
+	}
+	@Test
+	public void test2(){
+		int[] nums={2,1,1,2};
 		Assert.assertEquals(4,findMaxMoney(nums));
 	}
 
