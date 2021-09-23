@@ -42,7 +42,10 @@ public class P99_SquareNumbers {
 	
 	@Test
     public void test1(){
+	
         int[] nums={4,5,6};
+        int hashCode = nums.hashCode();
+        System.out.println(hashCode);
         //System.out.println(squareOutput(nums));
         Assert.assertTrue(Arrays.equals(squareOutputOptimised(nums), new int[]{16,25,36}));
     }
@@ -75,24 +78,22 @@ public class P99_SquareNumbers {
 
 	}
 	private int[] squareOutputOptimised(int[] nums){
-		int left=0,right=nums.length-1;
-		while(left<right){
+		int left=0,right=nums.length-1,index=nums.length-1;
+		int [] res=new int[nums.length];
+		while(index>=0){
 			if (Math.abs(nums[left])>Math.abs(nums[right])){
-				int temp=nums[left];
-				nums[left]=nums[right];
-				nums[right--]=temp;
+				res[index--]=nums[left]*nums[left];
+				left++;
+				
 			}
-			else right--;
+			else{
+				res[index--]=nums[right]*nums[right];
+				right--;
+			}
 		}
-		left=0;
-		right=nums.length-1;
-		while (left<=right){			
-			nums[left]=nums[left]*nums[left++];
-			if (left<right)nums[right]=nums[right]*nums[right--];
-			
-		}
-		System.out.println(Arrays.toString(nums));
-		return nums;
+		
+		System.out.println(Arrays.toString(res));
+		return res;
 	}
 	
 	

@@ -27,7 +27,20 @@ public class CountSubArraySumEqualK560 {
 		int k=-3;
 		Assert.assertEquals(2,subarraySum(nums, k));
 	}
-	
+
+	/*
+	 * Prefix Sum Put each each prefix sum in a map and it's count 
+	 * if map contains sum-target get the occurence and increment to count
+	 * 
+	 * Time complexity- O (n)
+	 * Space complexity - O(n)
+	 * 
+	 * Time 
+	 * Pseudo code- 5 mins
+	 * code- 10 mins
+	 * Debug- 5 Mins
+	 * 
+	 */
 	 public int subarraySum(int[] nums, int k) {
 	        Map<Integer,Integer> map=new HashMap<Integer,Integer>();
 	        map.put(0,1);

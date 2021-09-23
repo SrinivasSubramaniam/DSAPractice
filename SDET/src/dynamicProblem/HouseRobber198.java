@@ -1,5 +1,10 @@
 package dynamicProblem;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
+
 import org.junit.*;
 
 public class HouseRobber198 {
@@ -38,6 +43,7 @@ public class HouseRobber198 {
 	 * 	
 	 */
 	private int findMaxMoney(int[] nums) {
+		int[] ar=new int[10];
 		if (nums.length==1) return nums[0];
 		if (nums.length==2) return Math.max(nums[0], nums[1]);
 		int[] sum=new int[nums.length];

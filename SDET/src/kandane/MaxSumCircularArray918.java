@@ -3,7 +3,7 @@ package kandane;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MaxSumCircularArray {
+public class MaxSumCircularArray918 {
 	
 	@Test
 	public void test1(){
@@ -23,6 +23,23 @@ public class MaxSumCircularArray {
 		Assert.assertEquals(3,findMaxSum(nums));
 		
 	}
+	/*
+	 * Kandane
+	 *create minSum, WindowMinSum, MaxSUm, WindowMaxSum
+	 *if array is not circular use kandane and find maxSum
+	 *if array is ciruclar
+	 *		-> find min sum, maxsum, total sum
+	 *		-> return max of max sum and totalSum-MinSUm
+	 *
+	 *Time Complexity- O(n)
+	 *Space Complexity- O(1)
+	 *
+	 *Time taken
+	 *Psuedo code- 15 Mins
+	 *Code- 15 Mins
+	 *Debug - 10 Mins
+	 * 
+	 */
 
 	private int findMaxSum(int[] nums) {
 int maxSum=nums[0],minSum=nums[0],totalSum=nums[0],windowMinSum=nums[0],windowMaxSum=nums[0];

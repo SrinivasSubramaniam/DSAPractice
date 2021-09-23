@@ -36,12 +36,19 @@ public class SubArraySumDivK974 {
 	 *  if yes get the count of rem and add to outPut
 	 *  
 	 *  put the reminder value to the map
+	 *  
+	 *  Time complexity - O(n)
+	 *  Space Complexity - O(n)
+	 *  
+	 *  Time
+	 *  Psuedo code- 5 mins
+	 *  Coding- 10 Mins
+	 *  Debug- 5 mins
 	 * 
 	 * 
 	 */
 	private int findSubArray(int[] nums, int k) {
 		int count=0,sum=0;
-		TreeSet<Integer> set=new TreeSet<>();
 		
 		Map<Integer,Integer> map=new HashMap<Integer,Integer>();
 		map.put(0, 1);
