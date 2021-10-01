@@ -144,6 +144,7 @@ public class P09_MissingNumber {
 			}
 			return missedNumber;
 		}
+		
 		return -1;		
 	}
 	

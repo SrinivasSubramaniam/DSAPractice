@@ -1,5 +1,7 @@
 package dataStructures;
 
+import static org.testng.Assert.assertNotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -92,7 +94,7 @@ public class P29_AnagramsCheck {
 	    public void Test1(){
 	    	String s="cbaebabacd";
 	    	String p="abc";
-	    	findAnagrams(s, p);
+	    	findAnagramsAscii(s, p);
 	    }
 	    /*
 	     * Pseudo code
@@ -126,6 +128,25 @@ public class P29_AnagramsCheck {
 	    	
 	    	return list; 
 	        
+	    }
+	    
+	    private List<Integer> findAnagramsAscii(String s,String p){
+	    	int[] ascii=new int[128];
+	    	int[] pascii=new int[128];
+	    	List<Integer> list=new ArrayList<Integer>();
+	    	for (int i=0;i<p.length();i++){
+	    		pascii[p.charAt(i)]++;
+	    	}
+	    	for (int i = 0; i < s.length(); i++) {
+	    		ascii[s.charAt(i)]++;
+	    		if (i>=p.length()-1){
+	    			if (Arrays.equals(pascii, ascii)) list.add(i-(p.length()-1)) ;
+	    			ascii[s.charAt(i-(p.length()-1))]--;	    			
+	    		}
+				
+			}
+	    	System.out.println(list); 
+	    	return list;
 	    }
 	
 }

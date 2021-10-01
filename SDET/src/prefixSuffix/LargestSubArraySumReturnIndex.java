@@ -20,42 +20,26 @@ public class LargestSubArraySumReturnIndex {
 	
 	
 
-	private int findLargest(int[] A , int S) {
+	private int findLargest(int[] nums , int target) {
 		HashMap<Integer, Integer> map = new HashMap<>();
-        int sum = 0, maxLen = 0;
- 
-        // insert `(0, -1)` pair into the set to handle the case when a
-        // subarray with sum `S` starts from index 0
+        int maxLen = 0;
         map.put(0, -1);
  
-        int target = 0;
- 
-        // `len` stores the maximum length of subarray with sum `S`
+        int sum = 0;
         int len = 0;
- 
-        // stores ending index of the maximum length subarray having sum `S`
         int ending_index = -1;
- 
-        // traverse the given array
-        for (int i = 0; i < A.length; i++)
+        for (int i = 0; i < nums.length; i++)
         {
-            // sum of elements so far
-            target += A[i];
- 
-            // if the sum is seen for the first time, insert the sum with its
-            // into the map
-            map.putIfAbsent(target, i);
- 
-            // update length and ending index of the maximum length subarray
-            // having sum `S`
-            if (map.containsKey(target - S) && len < i - map.get(target - S))
+            sum += nums[i];
+            map.putIfAbsent(sum, i);
+            if (map.containsKey(sum - target) && len < i - map.get(sum - target))
             {
-                len = i - map.get(target - S);
+                len = i - map.get(sum - target);
                 ending_index = i;
             }
         }
         
-        System.out.println(Arrays.toString(Arrays.copyOfRange(A, ending_index - len+1 , ending_index+1)));
+        System.out.println(Arrays.toString(Arrays.copyOfRange(nums, ending_index - len+1 , ending_index+1)));
         
         
          

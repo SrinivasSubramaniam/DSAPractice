@@ -110,6 +110,7 @@ public class P10_OccurenceUnique {
 			for (int i=0;i<num1.length;i++) {
 					map.put(num1[i], map.getOrDefault(num1[i],0)+1);
 			}
+			
 			return map.size() == new HashSet<Integer>(map.values()).size();
 	} 
 		return false;

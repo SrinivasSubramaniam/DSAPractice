@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -12,6 +13,9 @@ import org.junit.Test;
 public class LargestStringReverse {
 	
 	/*
+	 * * Given a string and max duplicate occurrence of each char as k return the 
+	 * largest string in alphabetically largest order either by deleting or re-ordering
+	 * the char position based on k value
 	 * 
 	 * 1) Input-
 	 * Output -  

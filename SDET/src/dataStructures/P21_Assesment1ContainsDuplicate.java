@@ -71,8 +71,8 @@ public class P21_Assesment1ContainsDuplicate {
 		{
 			if(nums[left]==nums[left+1]) return true;
 			if(nums[right]==nums[right-1]) return true;
-			left+=2;
-			right-=2;
+			left+=1;
+			right-=1;
 			
 		}
 		return false;

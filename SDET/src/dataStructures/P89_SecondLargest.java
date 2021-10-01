@@ -86,6 +86,11 @@ public class P89_SecondLargest {
 	}
 	
 	private int findXSinglePass(int[] nums){
+		String s="123";
+		int parseInt = Integer.parseInt(s);
+		System.out.println(parseInt);
+		if (Integer.parseInt(s)!=Double.parseDouble(s))return 0;
+				
 		int largest=Math.max(nums[0], nums[1]);
 		int secondLargest=Math.max(nums[0], nums[1]);
 		for (int i = 2; i < nums.length; i++) {

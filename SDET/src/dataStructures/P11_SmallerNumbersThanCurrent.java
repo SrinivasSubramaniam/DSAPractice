@@ -120,7 +120,7 @@ public class P11_SmallerNumbersThanCurrent {
 	 *Space Complexity -> O(n)
 	 */
 	
-	private int[] smallerNumbersCountUsingBrute(int[] num)
+/*	private int[] smallerNumbersCountUsingBrute(int[] num)
 	{
 
 		Arrays.sort(num);
@@ -136,7 +136,7 @@ public class P11_SmallerNumbersThanCurrent {
 		System.out.println(Arrays.toString(output));
 		return output;
 		
-	}
+	}*/
 	
 	/*
 	 * Psuedo code

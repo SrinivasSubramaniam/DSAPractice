@@ -72,7 +72,12 @@ public class ProductsSort {
 			map.put(nums[i], map.getOrDefault(nums[i],0 )+1);
 			
 		}
-	int j=0;
+		Set<Entry<Integer, Integer>> set = map.entrySet();
+		ArrayList<Entry<Integer,Integer>> list=new ArrayList<>(set);
+		Collections.sort(list,(a ,b)-> (a.getValue().compareTo(b.getValue())));
+		System.out.println(list);
+		
+	/*int j=0;
 		for(int i=1;i<nums.length;i++){
 			for (Entry<Integer,Integer> each:map.entrySet()){
 				if (each.getValue()==i){
@@ -86,8 +91,31 @@ public class ProductsSort {
 			}
 		}
 		
-			System.out.println(Arrays.toString(nums));
+			System.out.println(Arrays.toString(nums));*/
 			return nums;
+	}
+	
+	private int[] sortProducts(int[] nums) {
+		TreeMap<Integer, Integer> map = new TreeMap<>();
+		int[] resultArray = new int[nums.length];
+		int index = 0;
+		for (int i = 0; i < nums.length; i++) {
+			map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+		}
+		ArrayList<Map.Entry<Integer, Integer>> sortedEntries = new ArrayList<>(map.entrySet());
+		Collections.sort(sortedEntries, Map.Entry.comparingByValue());
+		ArrayList<Integer> output = new ArrayList<>();
+		for (int i = 0; i < sortedEntries.size(); i++) {
+			Integer value = sortedEntries.get(i).getValue();
+			while (value > 0) {
+				output.add(sortedEntries.get(i).getKey());
+				value--;
+			}
+		}
+		for (int i = 0; i < output.size(); i++) {
+			resultArray[i] = output.get(i);
+		}
+		return resultArray;
 	}
 	
 

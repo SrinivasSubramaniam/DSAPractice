@@ -1,6 +1,8 @@
 package dataStructures;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.Test;
 import org.testng.Assert;
@@ -81,7 +83,7 @@ public class P20_NiceSubString {
 	public void testData1() {
 		String text="YazaAay";
 		
-		Assert.assertEquals(niceSubString(text),"aAa");
+		Assert.assertEquals(longestNiceSubstring(text),"aAa");
 	}
 	
 	/*Pseudo code
@@ -92,8 +94,16 @@ public class P20_NiceSubString {
 	 * 
 	 */
 
-	private String niceSubString(String text) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 public String longestNiceSubstring(String s) {
+	       if (s.length()<2) return "";
+	        Set<Character> set=new HashSet<>();
+	        for (char c: s.toCharArray()) set.add(c);
+	        for (int i=0;i<s.length();i++){
+	            if (set.contains(Character.toUpperCase(s.charAt(i)))&& set.contains(Character.toLowerCase(s.charAt(i)))) continue;
+	            String s1=longestNiceSubstring(s.substring(0,i));
+	            String s2=longestNiceSubstring(s.substring(i+1));
+	            return s1.length()>=s2.length()? s1: s2;
+	        }
+	        return s;
+	    }
 }

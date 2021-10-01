@@ -89,6 +89,7 @@ public class P04_RemoveElement {
 		}
 		
 		
+		
 		private int[] removeElement(int[] oldArray,int target)
 		{		
 			int pos=0;

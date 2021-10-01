@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TreeMap;
 
 import org.junit.*;
@@ -84,14 +85,25 @@ public class P63_Assessment1 {
 		}
 		System.out.println(map);
 		System.out.println(outPutList);
+		List<Entry<String,Integer>> listMap=new ArrayList<>(map.entrySet());
+		Collections.sort(listMap,(a,b)-> b.getValue()-a.getValue());
+		for (int i=0;i<listMap.size();i++){
+			outPutList.add(listMap.get(i).getKey()+" "+listMap.get(i).getValue());
+		}
+		
+		
+		
+		/*
 		int prevValue=Integer.MIN_VALUE;
 		int listIndex=0;
-		for(Map.Entry<String, Integer> each: map.entrySet()){
+		 * 
+		 * for(Map.Entry<String, Integer> each: map.entrySet()){
 			if (listIndex!=0 && each.getValue()>prevValue) outPutList.add(listIndex-1,each.getKey()+ " "+each.getValue());
 			else outPutList.add(listIndex,each.getKey()+ " "+each.getValue());
 			prevValue=each.getValue();
 			listIndex++;
-		}
+		}*/
+		
 		System.out.println(outPutList);
 		return list;
 	}
