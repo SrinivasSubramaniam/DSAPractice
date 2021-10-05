@@ -1,4 +1,4 @@
-package dataStructures;
+package dataStructures.Math;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -44,8 +44,6 @@ public class P99_SquareNumbers {
     public void test1(){
 	
         int[] nums={4,5,6};
-        int hashCode = nums.hashCode();
-        System.out.println(hashCode);
         //System.out.println(squareOutput(nums));
         Assert.assertTrue(Arrays.equals(squareOutputOptimised(nums), new int[]{16,25,36}));
     }

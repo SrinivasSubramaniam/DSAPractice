@@ -30,7 +30,7 @@ public class MaxFrogJumps {
 	@Test
 	public void example4() {
 		int[] nums = {5,7,16,9,10,15,14,13,12,7,6,3,5,2,1};
-		System.out.println(maxFrogJumps(nums));
+		System.out.println(maxFrogJumpsBSA(nums));
 		System.out.println();
 	}
 	
@@ -122,7 +122,7 @@ public int maxFrogJumpsMyBrute(int[] nums){
                 return mid;
             }
             
-            if (sub.get(mid) > num) {
+            if (num < sub.get(mid)) {
                 left = mid + 1;
             } else {
                 right = mid;

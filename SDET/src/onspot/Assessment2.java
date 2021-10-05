@@ -45,7 +45,6 @@ public class Assessment2 {
 		Integer[] end={3,4,2,3};
 		List<Integer> endList = Arrays.asList(end);
 		findMaximumMeeting(startList,endList);
-
 	}
 	
 	@Test
@@ -55,7 +54,6 @@ public class Assessment2 {
 		Integer[] end={3,2,4};
 		List<Integer> endList = Arrays.asList(end);
 		findMaximumMeeting(startList,endList);
-
 	}
 	@Test
 	public void test3() {
@@ -66,8 +64,36 @@ public class Assessment2 {
 		findMaximumMeeting(startList,endList);
 
 	}
+	
+	private int findMaximumMeeting(List<Integer> startList, List<Integer> endList){
+		int[][] times=new int[startList.size()][2];
+		for(int i=0;i<startList.size();i++){
+			times[i][0]=startList.get(i);
+			times[i][1]=endList.get(i);
+		}
+		Arrays.sort(times,(a,b)->{
+			if (a[1]!=b[1]) return a[1]-b[1];
+			else return a[0]-b[0];
+		});
+		//System.out.println(Arrays.deepToString(times));
+		int end=0;
+		int start=1;
+		int count=1;
+		while (start<times.length){
+			int startTime=times[start][0];
+			int endTime=times[end][1];
+			if (startTime>=endTime){
+				count+=1;
+				end++;
+			}
+			start++;
+		}
+		System.out.println(count);
+		return count;
+		
+	}
 
-	private int findMaximumMeeting(List<Integer> startList, List<Integer> endList) {
+	private int findMaximumMeetingOriginal(List<Integer> startList, List<Integer> endList) {
 		int[][] times=new int[startList.size()][2];
 		for (int i = 0; i < startList.size(); i++) {
 			times[i][0]=startList.get(i);

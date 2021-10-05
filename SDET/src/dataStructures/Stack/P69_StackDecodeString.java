@@ -80,37 +80,32 @@ String st = “(()))” -> 1 bracket
     }
 	
 	private String stackTest(String str){
-		Stack<Character> stack=new Stack<Character>();
-		for (int i=0;i<str.length();i++){
-			if(str.charAt(i)!=']') stack.push(str.charAt(i));
-			else{
-				List<Character> list=new ArrayList<>();
-				while (stack.peek()!='['){
-					list.add(stack.pop());
-				}
-				stack.pop();//to remove opening bracket
-				int j=1;
-				StringBuilder sbr=new StringBuilder();
-                while (!stack.isEmpty() &&Character.isDigit(stack.peek())) {
-                	sbr.append(stack.pop());                    
-                }
-                if (!sbr.equals("")){
-                   j= Integer.parseInt(sbr.reverse().toString());
-                }
-				while (j>0){
-					for (int k=list.size()-1;k>=0;k--){
-						stack.push(list.get(k));
-					}
-					j--;
-				}
+		Stack<String> wordStack=new Stack<String>();
+		Stack<Integer> countStack=new Stack<Integer>();
+		int number=0;
+		StringBuilder word=new StringBuilder();
+		for(int i=0;i<str.length();i++){
+			char c = str.charAt(i);
+			if (Character.isDigit(c)){
+				number=(number*10)+(c-'0');
+			}
+			else if (Character.isLetter(c)){
+				word.append(c);
+			}
+			else if (c=='['){
+				wordStack.push(word.toString());
+				countStack.push(number);
+				number=0;
+				word=new StringBuilder();
+			}else{
+				int count=countStack.pop();
+				StringBuilder tempWord=new StringBuilder(wordStack.pop());
+				for (int j=1;j<=count;j++) tempWord.append(word);
+				word=tempWord;
 			}
 		}
-		StringBuilder sbr=new StringBuilder();
-		while (!stack.isEmpty()){
-			sbr.append(stack.pop());
-		}
-		//System.out.println(sbr.reverse().toString());
-		return sbr.reverse().toString();
+		
+		return word.toString();
 	}
 	
 	private String findX(String str){

@@ -47,6 +47,7 @@ public class CountSubArraySumEqualK560 {
 	        int count=0,sum=0;
 	        for (int i=0;i<nums.length;i++){
 	            sum+=nums[i];
+	            //count+=map.getOrDefault(sum-k, 0);
 	            if (map.containsKey(sum-k)) 
 	                count+=map.get(sum-k);
 	            map.put(sum,map.getOrDefault(sum,0)+1);

@@ -19,8 +19,6 @@ public class MaxiMumSubArrayTargetK {
 	}
 
 	private void findMax(int[] nums, int target) {
-		String s="   fly me   to   the moon  ";
-		String[] split = s.trim().split(" ");
 		 int sum=nums[0];
 	        int max=sum;
 	        int left=0,right = 0;

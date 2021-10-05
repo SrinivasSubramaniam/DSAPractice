@@ -123,12 +123,14 @@ public class P1_GroupingAnagrams {
 			}
 			
 			String asciiKey = Arrays.toString(ascii);
+			//System.out.println(asciiKey);
 			if (!map.containsKey(asciiKey)){
 				map.put(asciiKey, new ArrayList<String>());
 			}
 			map.get(asciiKey).add(str);		
 			//return new List<List<String>()>();
 		}
+		System.out.println(map);
 		List<List<String>> list=new ArrayList<List<String>>(map.values());
 		//System.out.println(list);
 		return list;

@@ -119,7 +119,7 @@ public class P66_RemoveDuplicatesLinkedList {
               
           }
         
-        return outputNode;  
+        return outputNode.next;  
 
         
     }

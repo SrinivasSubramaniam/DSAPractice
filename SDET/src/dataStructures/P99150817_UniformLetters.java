@@ -61,7 +61,7 @@ public class P99150817_UniformLetters {
 	
 		
 	
-	@Test
+	//@Test
     public void test1(){
        String input="abbccaadf";
        int[] targetedValues={4,2,5,3,7};
@@ -84,6 +84,7 @@ public class P99150817_UniformLetters {
 			uniformValues.add(values);
 			previousletter=letter;
 		}
+		System.out.println(uniformValues);
 		boolean[] outPut=new boolean[targetedValues.length];
 		for (int i = 0; i < targetedValues.length; i++) {
 			if (uniformValues.contains(targetedValues[i])){

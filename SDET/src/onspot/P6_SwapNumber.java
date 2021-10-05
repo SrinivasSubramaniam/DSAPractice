@@ -1,5 +1,7 @@
 package onspot;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public class P6_SwapNumber {
@@ -44,11 +46,13 @@ public class P6_SwapNumber {
 
 	private int swapNumber(int num) {
 		char[] digits = Integer.toString(num).toCharArray();
+		System.out.println(Arrays.toString(digits));
         
         int[] buckets = new int[10];
         for (int i = 0; i < digits.length; i++) {
             buckets[digits[i] - '0'] = i;
         }
+        System.out.println(Arrays.toString(buckets));
         
         for (int i = 0; i < digits.length; i++) {
             for (int k = 9; k > digits[i] - '0'; k--) {

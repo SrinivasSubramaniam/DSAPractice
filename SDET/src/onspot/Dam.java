@@ -100,7 +100,6 @@ public class Dam {
 		int[] damHeight =new int[max+1];
 		int j=0;
 		for (int i=1;i<damHeight.length;i++){
-			
 			if (!listPos.contains(i)){
 				damHeight[i]=damHeight[i-1]+1;			
 			}else{
@@ -108,6 +107,7 @@ public class Dam {
 				damHeight[i]=listHeights.get(j++);
 			}
 		}
+		System.out.println(Arrays.toString(damHeight));
 		max=Integer.MIN_VALUE;
 		for (int i=damHeight.length-2;i>=0;i--){
 			if (!listPos.contains(i)){

@@ -77,7 +77,7 @@ public class ProductsSort {
 		Collections.sort(list,(a ,b)-> (a.getValue().compareTo(b.getValue())));
 		System.out.println(list);
 		
-	/*int j=0;
+	int j=0;
 		for(int i=1;i<nums.length;i++){
 			for (Entry<Integer,Integer> each:map.entrySet()){
 				if (each.getValue()==i){
@@ -91,7 +91,7 @@ public class ProductsSort {
 			}
 		}
 		
-			System.out.println(Arrays.toString(nums));*/
+			System.out.println(Arrays.toString(nums));
 			return nums;
 	}
 	

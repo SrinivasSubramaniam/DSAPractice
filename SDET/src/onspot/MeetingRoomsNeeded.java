@@ -60,6 +60,7 @@ public class MeetingRoomsNeeded {
 		
 		int start=0,end=0;
 		int meetingRooms=meeting.length;
+		
 		while (start<meeting.length){
 			if (meeting[start][0]>=meeting[end][1]){
 				meetingRooms--;

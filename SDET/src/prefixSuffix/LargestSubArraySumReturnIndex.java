@@ -3,7 +3,9 @@ package prefixSuffix;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.junit.Assert;
@@ -21,7 +23,7 @@ public class LargestSubArraySumReturnIndex {
 	
 
 	private int findLargest(int[] nums , int target) {
-		HashMap<Integer, Integer> map = new HashMap<>();
+		Map<Integer, Integer> map = new TreeMap<>();
         int maxLen = 0;
         map.put(0, -1);
  
@@ -31,7 +33,7 @@ public class LargestSubArraySumReturnIndex {
         for (int i = 0; i < nums.length; i++)
         {
             sum += nums[i];
-            map.putIfAbsent(sum, i);
+            map.putIfAbsent(sum, i);            
             if (map.containsKey(sum - target) && len < i - map.get(sum - target))
             {
                 len = i - map.get(sum - target);

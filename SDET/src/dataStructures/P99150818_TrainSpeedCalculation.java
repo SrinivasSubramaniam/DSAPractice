@@ -100,11 +100,6 @@ Time : 20 Minutes
 	 *  return outPutvariable 
 	 */
 	private int findX(int[] input, double hour) {
-		int x=-123;
-		int g=-x;
-		System.out.println(g);
-		int sum = 1056389759;
-		if (sum>Integer.MAX_VALUE) System.out.println(0);
 		/*int value=9646324350;
 		System.out.println(9646324350+1);*/
 		//System.out.println(9646324350);
