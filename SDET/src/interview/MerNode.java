@@ -112,7 +112,7 @@ public class MerNode {
 					current=current.next;
 				}
 			}
-			System.out.println(set);
+			//System.out.println(set);
 			return outPut.next;
 		}
 		public int findMiddleNode(Node node) {
@@ -144,6 +144,7 @@ public class MerNode {
 			node1.next.next.next = addNode(4);
 			node1.next.next.next.next = addNode(5);
 			node1.next.next.next.next.next = addNode(6);
+			node1.next.next.next.next.next = addNode(3);
 			
 
 			Node node2 = addNode(2);
@@ -157,11 +158,11 @@ public class MerNode {
 			printAllNodes(outPut);*/
 			/*Node outPut=alternateNumbers(node1);
 			printAllNodes(outPut);*/
-			/*Node outPut=removeDuplicates(node1);
-			printAllNodes(outPut)*/;
-			/*System.out.println(findMiddleNode(node1));*/
-			Node outPut=printEvenNodes(node1);
+			Node outPut=removeDuplicates(node1);
 			printAllNodes(outPut);
+			/*System.out.println(findMiddleNode(node1));*/
+			/*Node outPut=printEvenNodes(node1);
+			printAllNodes(outPut);*/
 
 		}
 	}

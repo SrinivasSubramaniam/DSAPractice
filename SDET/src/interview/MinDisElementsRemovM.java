@@ -3,6 +3,8 @@ package interview;
 import org.junit.*;
 import java.util.*;
 import java.util.Map.Entry;
+
+import org.junit.Assert;
 public class MinDisElementsRemovM {
 	@Test
 	public void test1(){

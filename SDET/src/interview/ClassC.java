@@ -6,7 +6,7 @@ import java.io.RandomAccessFile;
 
 public class ClassC {
 	public static void main(String[] args) {
-		ClassA b=new ClassB();
+		ClassB b=new ClassB();
 		
 		System.out.println(b.length);
 		b.getMethod();
