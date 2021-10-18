@@ -156,7 +156,7 @@ public class P17_SingleNumber {
 		while (left<=right)
 		{
 			if(num[left]!=num[left+1]) return num[left];
-			if(num[right]!=num[right+1]) return num[right];
+			if(num[right]!=num[right-1]) return num[right];
 			left+=2;
 			right-=2;
 			

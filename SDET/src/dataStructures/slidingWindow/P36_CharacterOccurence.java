@@ -88,34 +88,13 @@ public class P36_CharacterOccurence {
     public void Test1(){
     	String str="eceba";//kew
     	int k=2;
-    	int max=longestSubString(str,k);
-    	//System.out.println("str " + str+ " is "+ max);
-    	longestSubString(str,k);
-    	//removeDuplicatesTwoPointer(customersArray);
-    	
-    }
-	@Test
-    public void Test5(){
-    	String str="eceba";//kew
-    	int k=3;
     	//int max=longestSubString(str,k);
     	//System.out.println("str " + str+ " is "+ max);
     	longestSubString(str,k);
     	//removeDuplicatesTwoPointer(customersArray);
     	
     }
-	@Test
-    public void Test4(){
-    	String str="eceeebaeceeeeee";//kew
-    	int k=2;
-    	//int max=longestSubString(str,k);
-    	//System.out.println("str " + str+ " is "+ max);
-    	longestSubString(str,k);
-    	//removeDuplicatesTwoPointer(customersArray);
-    	
-    }
-	  
-	    
+	   
 
 		@Test
 	    public void Test2(){
@@ -123,7 +102,7 @@ public class P36_CharacterOccurence {
 	    	int k=2;
 	    	//int max=longestSubString(str,k);
 	    	//System.out.println("str " + str+ " is "+ max);
-	    	longestSubString(str,5);
+	    	longestSubString(str,k);
 	    	//removeDuplicatesTwoPointer(customersArray);
 	    	
 	    }
@@ -134,7 +113,27 @@ public class P36_CharacterOccurence {
 	    	int k=6;
 	    	//int max=longestSubString(str,k);
 	    	//System.out.println("str " + str+ " is "+ max);
-	    	longestSubString(str,5);
+	    	longestSubString(str,k);
+	    	//removeDuplicatesTwoPointer(customersArray);
+	    	
+	    }
+		@Test
+	    public void Test4(){
+	    	String str="eceeebaeceeeeee";//kew
+	    	int k=2;
+	    	//int max=longestSubString(str,k);
+	    	//System.out.println("str " + str+ " is "+ max);
+	    	longestSubString(str,k);
+	    	//removeDuplicatesTwoPointer(customersArray);
+	    	
+	    }
+		@Test
+	    public void Test5(){
+	    	String str="eceba";//kew
+	    	int k=3;
+	    	//int max=longestSubString(str,k);
+	    	//System.out.println("str " + str+ " is "+ max);
+	    	longestSubString(str,k);
 	    	//removeDuplicatesTwoPointer(customersArray);
 	    	
 	    }
@@ -186,8 +185,7 @@ public class P36_CharacterOccurence {
 	    			uniqueCount--;
 	    		}
 	    		max = Math.max(max,right-left+1);
-	    	}
-	    	//System.out.println(max);
+	    	}	//System.out.println(max);
 	    	return max;			
 		}
 } 

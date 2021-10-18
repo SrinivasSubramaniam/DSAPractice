@@ -121,7 +121,7 @@ public class P14_PalindromeCheckTwoPointer {
 	private boolean palindromeCheckUsingTwoPointer(String word) {
 		if (word.length()==0) return false;
 		int left=0,right=word.length()-1;
-		while (left<=right)
+		while (left<right)
 		{
 			if (!Character.isLetterOrDigit(word.charAt(left))) left++; 
 			if (!Character.isLetterOrDigit(word.charAt(right))) right--; 

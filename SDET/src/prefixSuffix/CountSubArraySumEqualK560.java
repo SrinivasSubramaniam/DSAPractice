@@ -1,6 +1,9 @@
 package prefixSuffix;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -42,6 +45,10 @@ public class CountSubArraySumEqualK560 {
 	 * 
 	 */
 	 public int subarraySum(int[] nums, int k) {
+		 String s="";
+		 String[] split = s.split(" ");
+		 List<String> asList = Arrays.asList(split);
+		 Collections.sort(asList);
 	        Map<Integer,Integer> map=new HashMap<Integer,Integer>();
 	        map.put(0,1);
 	        int count=0,sum=0;

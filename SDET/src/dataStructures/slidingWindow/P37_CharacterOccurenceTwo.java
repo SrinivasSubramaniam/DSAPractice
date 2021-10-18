@@ -81,6 +81,14 @@ public class P37_CharacterOccurenceTwo {
 	 * /
 	 */
 
+    @Test
+    public void Test(){
+    	String str="eceba";//kew
+    	longestSubstring(str);
+    	//removeDuplicatesTwoPointer(customersArray);
+    	
+    }
+
 	@Test
     public void Test1(){
     	String str="abcddgfhij";//kew
@@ -107,13 +115,6 @@ public class P37_CharacterOccurenceTwo {
 	    @Test
 	    public void Test4(){
 	    	String str="abcdd";
-	    	longestSubstring(str);
-	    	//removeDuplicatesTwoPointer(customersArray);
-	    	
-	    }
-	    @Test
-	    public void Test(){
-	    	String str="eceba";//kew
 	    	longestSubstring(str);
 	    	//removeDuplicatesTwoPointer(customersArray);
 	    	

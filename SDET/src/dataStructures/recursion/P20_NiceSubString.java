@@ -1,4 +1,4 @@
-package dataStructures;
+package dataStructures.recursion;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -81,20 +81,16 @@ public class MerNode {
 
 		}
 		public Node alternateNumbers(Node node) {
-			Node outPut = new Node();
-			Node current=outPut;
-			
-			while (node!=null){
-				if (node.next.next==null){
-					node.next=null;
-					current.next=node;
-					break;
-				}				
-				current.next=node;
-				node=node.next.next;
-				current=current.next;
-			}
-			return outPut.next;
+			 Node oddNode=node, evenNode=node.next;
+		        while (evenNode!=null && evenNode.next!=null){
+		            node.next=evenNode.next;
+		            node=node.next;
+		            evenNode.next=node.next;
+		            evenNode=evenNode.next;
+		            node.next=null;
+		        }
+
+		        return oddNode;
 		}
 		public Node removeDuplicates(Node node) {
 			Node outPut = new Node();
@@ -103,8 +99,9 @@ public class MerNode {
 			
 			while (node!=null){
 				if (set.contains(node.value)){
-					node=node.next;
 					current.next=null;
+					node=node.next;
+					
 				}else{
 					set.add(node.value);
 					current.next=node;
@@ -144,7 +141,7 @@ public class MerNode {
 			node1.next.next.next = addNode(4);
 			node1.next.next.next.next = addNode(5);
 			node1.next.next.next.next.next = addNode(6);
-			node1.next.next.next.next.next = addNode(3);
+			node1.next.next.next.next.next.next = addNode(3);
 			
 
 			Node node2 = addNode(2);
@@ -158,11 +155,11 @@ public class MerNode {
 			printAllNodes(outPut);*/
 			/*Node outPut=alternateNumbers(node1);
 			printAllNodes(outPut);*/
-			Node outPut=removeDuplicates(node1);
-			printAllNodes(outPut);
-			/*System.out.println(findMiddleNode(node1));*/
-			/*Node outPut=printEvenNodes(node1);
+			/*Node outPut=removeDuplicates(node1);
 			printAllNodes(outPut);*/
+			/*System.out.println(findMiddleNode(node1));*/
+			Node outPut=alternateNumbers(node1);
+			printAllNodes(outPut);
 
 		}
 	}

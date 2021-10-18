@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class P59_MergeLinkedList {
 	
-	Node head;
+	//Node head;
 	//When creating a new Node
 	 public class Node{
 		 int value;

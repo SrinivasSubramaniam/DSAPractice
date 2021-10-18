@@ -85,6 +85,13 @@ public class P07_MaxOccurence {
 		Assert.assertEquals(2, maxOccurenceUsingMid(array));
 
 	}
+	@Test
+	public void testData5() {
+		int[] array = { 1,2,2,2,4,4,6 };
+		System.out.println(maxOccurenceUsingMid(array));
+		Assert.assertEquals(-1, maxOccurenceUsingMid(array));
+
+	}
 
 	/*@Test
 	public void testData4() {

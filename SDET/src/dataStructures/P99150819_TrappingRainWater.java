@@ -95,9 +95,11 @@ public class P99150819_TrappingRainWater {
 		int[] leftMax=new int[input.length];		
 		int[] rightMax=new int[input.length];
 		leftMax[0]=input[0];
+		//Left to right
 		for (int i = 1; i < input.length; i++) {
 			leftMax[i]=Math.max(leftMax[i-1], input[i]);
 		}
+		//right to left
 		rightMax[n-1]=input[n-1];
 		for (int i = n-2; i >=0; i--) {
 			rightMax[i]=Math.max(rightMax[i+1], input[i]);

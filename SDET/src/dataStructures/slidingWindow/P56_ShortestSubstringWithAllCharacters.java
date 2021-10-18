@@ -10,7 +10,7 @@ import java.util.Set;
 import org.junit.*;
 
 
-public class P56_ShortestSubstring {
+public class P56_ShortestSubstringWithAllCharacters {
 	/*
 	 *Write a program to return the shortest substring 
 	 *having all the unique characters of the string
@@ -120,4 +120,6 @@ public class P56_ShortestSubstring {
 		}
 		return "";
 	}
+	
+	
 }

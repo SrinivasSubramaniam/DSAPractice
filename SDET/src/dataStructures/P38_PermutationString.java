@@ -11,6 +11,8 @@ import java.util.Set;
 import org.junit.Test;
 import org.testng.Assert;
 
+import bsh.StringUtil;
+
 public class P38_PermutationString {
 	/*
 	 * Given two strings s1 and s2, return true if s2 contains the permutation
@@ -128,6 +130,7 @@ public class P38_PermutationString {
 	    }
 	    
 	    private boolean permutationUsingSlidingWindow(String str1,String str2){
+	    	
 	    	if (str1.length()>str2.length()) return false;
 	    	if (str1.length()==0) return false;
 	    	int[] count=new int[26];

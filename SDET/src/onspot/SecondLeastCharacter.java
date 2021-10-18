@@ -30,7 +30,7 @@ public class SecondLeastCharacter {
 			map.put(c, map.getOrDefault(c, 0)+1);			
 		}
 		List<Entry<Character, Integer>> list = new ArrayList<>(map.entrySet());
-		Collections.sort(list, (a,b)->a.getValue().compareTo(b.getValue()));
+		Collections.sort(list, (a,b)-> a.getValue()-b.getValue()/*a.getValue().compareTo(b.getValue())*/);
 		System.out.println(list);		
 		return list.get(1).getKey();
 	}

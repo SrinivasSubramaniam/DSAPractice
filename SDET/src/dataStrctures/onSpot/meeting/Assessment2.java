@@ -1,4 +1,4 @@
-package onspot;
+package dataStrctures.onSpot.meeting;
 
 import java.util.Arrays;
 import java.util.List;

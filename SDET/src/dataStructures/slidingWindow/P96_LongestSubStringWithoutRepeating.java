@@ -34,49 +34,64 @@ public class P96_LongestSubStringWithoutRepeating {
 	@Test
     public void test1(){
         String s="aaabcd";
-        Assert.assertEquals(findX(s),4);
+        Assert.assertEquals(longestSubstring(s),4);
     }
 	@Test
     public void test2(){
         String s="aaabcdaaa";
-        Assert.assertEquals(findX(s),4);
+        Assert.assertEquals(longestSubstring(s),4);
     }
 	@Test
     public void test3(){
         String s="abbbbbacdg";
-        Assert.assertEquals(findX(s),5);
+        Assert.assertEquals(longestSubstring(s),5);
     }
 	@Test
     public void test4(){
         String s="aabcdghibbc";
-        Assert.assertEquals(findX(s),7);
+        Assert.assertEquals(longestSubstring(s),7);
     }
 	@Test
     public void test5(){
         String s="abab";
-        Assert.assertEquals(findX(s),2);
+        Assert.assertEquals(longestSubstring(s),2);
     }
 	@Test
     public void test6(){
         String s="pwwkew";
-        Assert.assertEquals(findX(s),3);
+        Assert.assertEquals(longestSubstring(s),3);
     }
 	
 	private int findX(String s){
 		int max=Integer.MIN_VALUE;
 		int left=0;
 		Map<Character, Integer> map=new HashMap<Character, Integer>();
-		for (int i = 0; i < s.length(); i++) {
-			if (map.containsKey(s.charAt(i))) {
-				left=Math.max(left, map.get(s.charAt(i))+1);
+		for (int right = 0; right < s.length(); right++) {
+			if (map.containsKey(s.charAt(right))) {
+				left=Math.max(left, map.get(s.charAt(right))+1);
 			}
-				map.put(s.charAt(i), i);
-				max=Math.max(max, (i-left)+1);
+				map.put(s.charAt(right), right);
+				max=Math.max(max, (right-left)+1);
 				
 		}
 		System.out.println(max);
 		return max;
 	}
+	private int longestSubstring(String str) {
+    	int left=0,right=0,max=0;
+    	int[] ascii=new int[128];
+    	for (right = 0; right < str.length(); right++) { 		
+    		ascii[str.charAt(right)]++;
+    		while (ascii[str.charAt(right)]>1)
+    		{
+    			ascii[str.charAt(left++)]--;
+    		}
+    		max=Math.max(max,right-left+1);
+			
+		}
+    	System.out.println(max);
+		return max;
+    }
 	public int lengthOfLongestSubstring(String s) {
         int[] map = new int[128];
         int res = 0;

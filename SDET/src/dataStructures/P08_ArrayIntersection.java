@@ -148,6 +148,8 @@ public class P08_ArrayIntersection {
 			int pos = 0;
 			Arrays.sort(num1);
 			Arrays.sort(num2);
+			String s="abc";
+			StringBuilder sbr=new StringBuilder();
 			for (int i = 0; i < num1.length; i++) {
 				for (int j = 0; j < num2.length; j++) {
 					if (num1[i] == num2[j] && num1[i] != previous) {

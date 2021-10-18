@@ -73,6 +73,11 @@ public class P13_StringReverseTwoPointer {
 
 
 	private String revereStringUsingTwoPointer(String word) {
+		System.out.println(Character.isLetter('#'));
+		System.out.println(Character.isLetter('2'));
+		System.out.println(Character.isAlphabetic('#'));
+		System.out.println(Character.isAlphabetic('2'));
+		
 		int left = 0, right = word.length() - 1;
 		char[] charArray = word.toCharArray();
 		while (left < right) {

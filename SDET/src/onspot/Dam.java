@@ -93,12 +93,13 @@ public class Dam {
 
 	}
 	
-
+	/// 
 	private int findHeight(List<Integer> listPos, List<Integer> listHeights) {
 		Integer max = Collections.max(listPos);
 		if (listPos.size()==max) return 0;
 		int[] damHeight =new int[max+1];
 		int j=0;
+		//left to right
 		for (int i=1;i<damHeight.length;i++){
 			if (!listPos.contains(i)){
 				damHeight[i]=damHeight[i-1]+1;			
@@ -112,7 +113,7 @@ public class Dam {
 		for (int i=damHeight.length-2;i>=0;i--){
 			if (!listPos.contains(i)){
 				int temp=damHeight[i+1]+1;
-				if (temp < damHeight[i]) damHeight[i] = temp;
+				if (temp < damHeight[i]) damHeight[i] = temp; //min value
 				max=Math.max(max, damHeight[i]);
 				
 			}
