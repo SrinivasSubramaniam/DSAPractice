@@ -121,6 +121,7 @@ String st = “(()))” -> 1 bracket
 				int k=1;
 				if (!stack.isEmpty()&&Character.isDigit(stack.peek())){
 					k=Character.getNumericValue(stack.pop());
+					
 				}
 				while (k>0){
 					for (int j = list.size()-1; j >=0; j--) {

@@ -83,13 +83,13 @@ public class P62_MinimumWindowSubString {
         System.out.println(minWindowAsciiOptimised(str, target));
         
     }
-	/*@Test
+	@Test
     public void test2(){
         String str="ADOBECODEBANM";
         String target="ABC";
         System.out.println(minWindowAsciiOptimised(str, target));
         
-    }*/
+    }
 	@Test
     public void test3(){
         String str="ADOBECCODEBANM";
@@ -152,6 +152,7 @@ public class P62_MinimumWindowSubString {
 	        if (flag) return str.substring(start-1,end);	     
         return "";
 	}
+	
 	
 	
 	

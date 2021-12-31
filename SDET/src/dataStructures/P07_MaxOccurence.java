@@ -197,6 +197,7 @@ public class P07_MaxOccurence {
 
 				if (map.get(array[i]) > (array.length) / 2) {
 					return array[i];
+					
 				}
 
 			}

@@ -101,6 +101,12 @@ public class P34_RemoveDuplicatesSortedArray {
 	    	removeDuplicatesTwoPointer(customersArray);
 	    	
 	    }
+	    @Test
+	    public void Test4(){
+	    	int[] customersArray={2,2,3,3,3};
+	    	removeDuplicatesTwoPointer(customersArray);
+	    	
+	    }
 	    /*
 	     * Initialize a left and right variable with 0 value
 	     * Do a while loop with left variable

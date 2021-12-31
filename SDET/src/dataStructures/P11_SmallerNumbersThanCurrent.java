@@ -72,14 +72,20 @@ public class P11_SmallerNumbersThanCurrent {
 	@Test
 	public void testData2()
 	{
-		int[] num={6,6,7};
-		Assert.assertArrayEquals(new int[] {0,0,2},smallerNumbersUsingArray(num));
+		int[] num={6,6,7,7};
+		Assert.assertArrayEquals(new int[] {0,0,2,2},smallerNumbersUsingArray(num));
 	}
 	@Test
 	public void testData3()
 	{
 		int[] num={8,1,2,2,3};
 		Assert.assertArrayEquals(new int[] {4,0,1,1,3},smallerNumbersUsingArray(num));
+	}
+	@Test
+	public void testData4()
+	{
+		int[] num={100,100,100};
+		Assert.assertArrayEquals(new int[] {0,0,0},smallerNumbersUsingArray(num));
 	}
 	
 	/*Psuedo Code
@@ -152,13 +158,13 @@ public class P11_SmallerNumbersThanCurrent {
 	
 	private int[] smallerNumbersUsingArray(int[] num)
 	{
-		int[] count = new int[101];
+		int[] count = new int[102];
         for(int i=0; i<num.length; i++)
         {
         	count[num[i]+1]++;
         }
 
-        for(int i=1; i<101; i++) 
+        for(int i=1; i<count.length; i++) 
         {
         	count[i] += count[i-1];
         }

@@ -88,7 +88,7 @@ Time : 20 Minutes
     }
 	@Test
     public void test3(){
-		String s="a";
+		String s="abda";
 		System.out.println(findX(s));
 				
     }

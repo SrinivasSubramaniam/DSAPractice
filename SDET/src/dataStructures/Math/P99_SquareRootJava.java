@@ -45,7 +45,7 @@ public class P99_SquareRootJava {
 	@Test
     public void test1(){
         int nums=15;
-        findXRecursion(nums);
+        System.out.println(findXRecursion(nums));
     }
 	
 	private double findXRecursion(int n) {
@@ -60,15 +60,17 @@ public class P99_SquareRootJava {
 		return squareroot;
 
 	}
-	private double findXRecursionOther(int n) {
-		double squareroot = n / 2;
-		double temp = 0;
-		while (temp - squareroot != 0) {
-			temp = squareroot;
-			squareroot = (temp + (n / temp)) / 2;
-		}
-		System.out.println(squareroot);
-		return squareroot;
-
+	private double findSquareRoot(int n){
+		double i=2,j=n/2;
+		return findSquareBinary(n,i,j);
 	}
+
+	private double findSquareBinary(int number,double i,double j) {
+		double midvalue = (i+j)/2;  
+		double square = midvalue * midvalue;   
+		if(square==number||Math.abs(square-number)<0.0000001)  return midvalue;  
+		else if(square>number)	return findSquareBinary(number, i, midvalue);  
+		else  return findSquareBinary(number, midvalue, j);
+	}
+	
 }

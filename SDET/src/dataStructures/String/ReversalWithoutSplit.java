@@ -8,7 +8,7 @@ public class ReversalWithoutSplit {
 		   String reverseWord="";
 		   
 		   //Adding a space at the end to include the last word
-		   word = " "+word+" "; 
+		   word = ""+word+""; 
 
 		   int  endPos = word.length() - 1;
 		   

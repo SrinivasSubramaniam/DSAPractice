@@ -53,8 +53,8 @@ public class LongestEvenWords {
 				max=split[i].length();
 				maxEven=split[i];
 			}
-			
 		}
+		System.out.println(max);
 		return maxEven;
 		
 	}

@@ -1,11 +1,19 @@
 package dataStructures.dequeue;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import org.junit.Test;
+
 public class RotateArray {
-	
+	@Test
+	public void test1(){
+		int[] nums={1,2,3,4,5,6,7};
+		int k=3;
+		rotate(nums, k);
+	}
 	
 	
 	public void rotate(int[] nums, int k) {
@@ -13,6 +21,7 @@ public class RotateArray {
 	    reverse(nums, 0, nums.length - 1);
 	    reverse(nums, 0, k - 1);
 	    reverse(nums, k, nums.length - 1);
+	    System.out.println(Arrays.toString(nums));
 	}
 
 	public void reverse(int[] nums, int start, int end) {

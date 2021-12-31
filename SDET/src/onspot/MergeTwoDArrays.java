@@ -43,10 +43,12 @@ public class MergeTwoDArrays {
 	@Test
 	public void test1() {
 		int[][] arr={{1,3},{2,4},{6,9}};
+		
 		System.out.println(Arrays.deepToString(merge(arr)));
 	}
 
 	private int[][] merge(int[][] intervals) {
+		
 		Arrays.sort(intervals, (i, j) -> {
 			if (i[0] != j[0])
 				return i[0] - j[0];
@@ -67,13 +69,16 @@ public class MergeTwoDArrays {
 			}
 		}
 		list.add(new int[] {startTime,endTime});
-		int[][] array = list.toArray(new int[list.size()][]);
+		int[][] array = list.toArray(new int[list.size()][2]);
+		
 		/*int[][] retArr = new int[list.size()][2];
 		int index  = 0; 
 		for (List<Integer> eachList : list) {
 			retArr[index][0] = eachList.get(0);
 			retArr[index++][1] = eachList.get(1);
 		}*/
+		//System.out.println(array.length);
+		//System.out.println(array[0][1]);
 		return array;
 	}
 

@@ -83,8 +83,10 @@ public class P87_LastAnagram {
 	 * 
 	 */
 	private String findX(String str,String target){
+		
 		Map<Character, Integer> dictMap=new HashMap<Character, Integer>();
 		Map<Character, Integer> map=new HashMap<Character,Integer>();
+		
 		String tempString="";
 		int left=0,right=0;
 		for (int i = 0; i < target.length(); i++) {

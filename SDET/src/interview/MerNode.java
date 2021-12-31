@@ -158,7 +158,7 @@ public class MerNode {
 			/*Node outPut=removeDuplicates(node1);
 			printAllNodes(outPut);*/
 			/*System.out.println(findMiddleNode(node1));*/
-			Node outPut=alternateNumbers(node1);
+			Node outPut=printEvenNodes(node1);
 			printAllNodes(outPut);
 
 		}

@@ -9,28 +9,28 @@ public class MaxFrogJumps {
 	@Test
 	public void example1() {
 		int[] nums = {6,13,10,8,11,7,3,5,2};
-		System.out.println(maxFrogJumpsBSA(nums));
+		System.out.println(maxFrogJumps(nums));
 		System.out.println();
 	}
 	
 	@Test
 	public void example2() {
 		int[] nums = {6,4,5,4,3,2,1};
-		System.out.println(maxFrogJumpsBSA(nums));
+		System.out.println(maxFrogJumps(nums));
 		System.out.println();
 	}
 	
 	@Test
 	public void example3() {
 		int[] nums = {5,7,11,9,10,7,6,3,5,2,1};
-		System.out.println(maxFrogJumpsBSA(nums));
+		System.out.println(maxFrogJumps(nums));
 		System.out.println();
 	}
 	
 	@Test
 	public void example4() {
 		int[] nums = {5,7,16,9,10,15,14,13,12,7,6,3,5,2,1};
-		System.out.println(maxFrogJumpsBSA(nums));
+		System.out.println(maxFrogJumps(nums));
 		System.out.println();
 	}
 	

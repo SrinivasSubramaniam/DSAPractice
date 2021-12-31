@@ -74,7 +74,8 @@ public class ProductsSort {
 		}
 		Set<Entry<Integer, Integer>> set = map.entrySet();
 		ArrayList<Entry<Integer,Integer>> list=new ArrayList<>(set);
-		Collections.sort(list,(a ,b)-> (a.getValue().compareTo(b.getValue())));
+		Collections.sort(list,(a,b)->(a.getValue() -b.getValue()));
+		//Collections.sort(list,(a ,b)-> (a.getValue().compareTo(b.getValue())));
 		System.out.println(list);
 		
 	int j=0;

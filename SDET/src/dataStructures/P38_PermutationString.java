@@ -138,15 +138,15 @@ public class P38_PermutationString {
 	    		count[str1.charAt(i)-'a']++;
 	    		count[str2.charAt(i)-'a']--;
 	    	}
-	    	 System.out.println("first for loop is "+Arrays.toString(count));
+	    	 //System.out.println("first for loop is "+Arrays.toString(count));
 	    	if (allZero(count)) return true;
 	    	 for (int i = str1.length(); i < str2.length(); i++) {
 	             count[str2.charAt(i) - 'a']--;
 	             count[str2.charAt(i - str1.length()) - 'a']++;
-	             System.out.println("second for loop is "+Arrays.toString(count));
+	             //System.out.println("second for loop is "+Arrays.toString(count));
 	             if (allZero(count)) return true;
 	         }
-	    	 System.out.println("third for loop is "+Arrays.toString(count));
+	    	 //System.out.println("third for loop is "+Arrays.toString(count));
 	         return false;
 	    	//return false;
 	    	
