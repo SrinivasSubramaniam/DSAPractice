@@ -6,7 +6,7 @@ import org.junit.Test;
 public class P43_FindMinKandane {
 	@Test
     public void test1(){
-        int[] nums={1,2,-5,-3,2,1,7};
+        int[] nums={1,2,-5,-3,2,-8,7};
         int result= -8;
         Assert.assertEquals(findMinusingKandane(nums),result);
     }
