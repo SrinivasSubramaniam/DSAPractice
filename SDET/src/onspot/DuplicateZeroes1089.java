@@ -66,7 +66,6 @@ public class DuplicateZeroes1089 {
 				if (right<arr.length) arr[right]=arr[left];
 				right--;
 				left--;
-
 			}
 		}
 		return arr;

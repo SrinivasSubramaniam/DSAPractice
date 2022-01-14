@@ -59,6 +59,8 @@ public class P02_TwoSumV1 {
 		int target=7;
 		System.out.println(Arrays.toString(twoSum(n, target)));
 		
+		
+		
 	}
 	@Test
 	public void testData2()

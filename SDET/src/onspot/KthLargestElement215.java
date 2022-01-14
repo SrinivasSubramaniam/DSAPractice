@@ -18,7 +18,7 @@ public class KthLargestElement215 {
 	public void test2(){
 		int[] nums={3,2,3,1,2,4,5,5,6};
 		int k=4;
-		findKthLargest(nums, k);
+		System.out.println(findKthLargest(nums, k));
 		
 	}
 	

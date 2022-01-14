@@ -42,7 +42,7 @@ public class MergeTwoDArrays {
 
 	@Test
 	public void test1() {
-		int[][] arr={{1,3},{2,4},{6,9}};
+		int[][] arr={{1,3},{2,4},{6,9},{5,9}};
 		
 		System.out.println(Arrays.deepToString(merge(arr)));
 	}
@@ -55,6 +55,7 @@ public class MergeTwoDArrays {
 			else
 				return i[1] - j[1];
 		});
+		System.out.println(Arrays.deepToString(intervals));
 		System.out.println();
 		List<int[]> list = new ArrayList<>();
 		int startTime = intervals[0][0], endTime = intervals[0][1];
@@ -70,6 +71,7 @@ public class MergeTwoDArrays {
 		}
 		list.add(new int[] {startTime,endTime});
 		int[][] array = list.toArray(new int[list.size()][2]);
+		//System.out.println(Arrays.deepToString(array));
 		
 		/*int[][] retArr = new int[list.size()][2];
 		int index  = 0; 

@@ -150,6 +150,8 @@ public class MerNode {
 
 			/*Node outPut = mergeNode(node1, node2);
 			printAllNodes(outPut);*/
+			Node outPut=printEvenNodes(node1);
+			printAllNodes(outPut);
 			
 			/*Node outPut=reverse(node1);
 			printAllNodes(outPut);*/
@@ -158,8 +160,8 @@ public class MerNode {
 			/*Node outPut=removeDuplicates(node1);
 			printAllNodes(outPut);*/
 			/*System.out.println(findMiddleNode(node1));*/
-			Node outPut=printEvenNodes(node1);
-			printAllNodes(outPut);
+			//Node outPut=printEvenNodes(node1);
+			//printAllNodes(outPut);
 
 		}
 	}

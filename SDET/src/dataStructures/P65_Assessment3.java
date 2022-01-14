@@ -61,7 +61,7 @@ public class P65_Assessment3 {
 	 * /
 	 */
 	 public static int getMaxDeletions(String s) {
-		 String str="URRUDRL";
+		 String str="URRUDRL";//2 +1 
 		 //String str="RRRR";
 		 
 		 Map<Character, Integer> map=new HashMap<Character, Integer>();

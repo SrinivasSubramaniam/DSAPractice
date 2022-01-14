@@ -61,7 +61,7 @@ public class P99150817_UniformLetters {
 	
 		
 	
-	//@Test
+	@Test
     public void test1(){
        String input="abbccaadf";
        int[] targetedValues={4,2,5,3,7};

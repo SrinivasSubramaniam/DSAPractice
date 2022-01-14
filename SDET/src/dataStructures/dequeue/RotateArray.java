@@ -10,9 +10,9 @@ import org.junit.Test;
 public class RotateArray {
 	@Test
 	public void test1(){
-		int[] nums={1,2,3,4,5,6,7};
+		int[] nums={1,2,3,4,5,6,7}; // 7,6,5,4,3,2,1  // 6 = 6-3
 		int k=3;
-		rotate(nums, k);
+		rotateArray(nums, k);
 	}
 	
 	
